@@ -1,0 +1,33 @@
+@import '../styles/main.scss';
+
+header {
+  height: 50px;
+  border-bottom: 1px solid $grey;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+
+  .wrapper {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100vw;
+    height: 50px;
+  }
+
+  .container {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    width: 100vw;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}

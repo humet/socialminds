@@ -1,0 +1,28 @@
+@import '../styles/main.scss';
+
+.footer {
+
+  &__top {
+    height: 200px;
+    border-top: 1px solid $grey;
+  }
+
+  &__bottom {
+    background: $dark-grey;
+    color: $white;
+    font-size: 13px;
+    height: 65px;
+  }
+
+  a {
+    color: $white;
+    font-size: 13px;
+    text-decoration: none;
+
+    &:hover {
+      color: $white;
+      font-size: 13px;
+      text-decoration: none;
+    }
+  }
+}
