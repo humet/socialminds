@@ -29,5 +29,19 @@ header {
     flex-direction: row;
     justify-content: center;
     margin: 0 auto;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 5px;
+      height: 50px;
+    }
   }
 }

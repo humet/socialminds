@@ -4,7 +4,7 @@ import React from "react"
 import "./footer.scss"
 
 const Footer = ({ noLogo}) => (
-  <footer className="footer">
+ <footer className="footer">
     <div className="wrapper footer__top">
     <div className="container">
     { !noLogo &&
@@ -25,4 +25,5 @@ const Footer = ({ noLogo}) => (
   </div>
 </footer>
 )
+
 export default Footer

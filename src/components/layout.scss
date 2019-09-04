@@ -1,1 +1,17 @@
 @import '../styles/main.scss';
+
+.home {
+  height: 60vh;
+
+  h1 {
+    font-size: 100px;
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  p {
+    font-size: 21px;
+    text-align: center;
+    color: $dark-grey;
+  }
+}
