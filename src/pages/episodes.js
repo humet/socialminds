@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const EpisodesPage = () => (
-  <Layout>
+  <Layout className="episodespage">
     <section className="episodes">
     <SEO title="Episodes" />
     <h1>All Episodes</h1>

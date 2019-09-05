@@ -1,10 +1,17 @@
 @import '../styles/main.scss';
 
 .footer {
+  margin-top: 60px;
 
   &__top {
     height: 200px;
     border-top: 1px solid $grey;
+  
+    .podcast-img {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
   }
 
   &__bottom {

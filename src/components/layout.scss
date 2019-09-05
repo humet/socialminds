@@ -12,10 +12,6 @@
   header {
     border-bottom: 0px !important;
 
-    .container{
-      justify-content: center;
-    }
-
     .nav-logo,
     .social {
       display: none;
@@ -63,12 +59,18 @@
     }
   }
 
+  .podcast-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
   .footer{
     display: none;
   }
 }
 
-.episodes {
+.episodespage {
 
   h1 {
     padding: 0;
@@ -78,7 +80,7 @@
 
 }
 
-.contact {
+.contactpage {
 
   h1 {
     padding: 0;
@@ -88,7 +90,27 @@
 
 }
 
-.about {
+.aboutpage {
+
+  h1 {
+    padding: 0;
+    margin: 60px 0;
+    text-align: center;
+  }
+
+}
+
+.privacypage {
+
+  h1 {
+    padding: 0;
+    margin: 60px 0;
+    text-align: center;
+  }
+
+}
+
+.termspage {
 
   h1 {
     padding: 0;

@@ -4,9 +4,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Logo from '../images/Social_minds_logo.svg';
 import Social from "../components/social"
+import Podcast from "../components/podcastimg"
 
 const IndexPage = () => (
-  <Layout className="homepage" noLogo noSocial>
+  <Layout className="homepage">
     <section className="home">
     <SEO title="Home" />
     <h1><img alt="logo" className="logo" src={Logo} width="512"/></h1>
@@ -14,9 +15,10 @@ const IndexPage = () => (
       <div className="social-links">
       <Social/>
         </div>
+        <div className="podcast-img">
+      <Podcast/>
+    </div>
     </section>
-    <div className="theo"></div>
-    <div className="eve"></div>
   </Layout>
 )
 export default IndexPage
