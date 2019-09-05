@@ -5,8 +5,10 @@ import SEO from "../components/seo"
 
 const AboutPage = () => (
   <Layout>
+    <section className="about">
     <SEO title="About" />
     <h1>About</h1>
+    </section>
   </Layout>
 )
 

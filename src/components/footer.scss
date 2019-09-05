@@ -12,6 +12,12 @@
     color: $white;
     font-size: 13px;
     height: 65px;
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   a {
@@ -23,6 +29,25 @@
       color: $white;
       font-size: 13px;
       text-decoration: none;
+    }
+  }
+
+  &-logo {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    img {
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+
+  &-bottom-logo {
+    img {
+      margin: 0 auto;
+      padding: 0;
     }
   }
 }

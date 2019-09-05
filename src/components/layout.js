@@ -14,7 +14,7 @@ import Footer from "./footer"
 
 import "./layout.scss"
 
-const Layout = ({ children, noLogo, noSocial }) => {
+const Layout = ({ children, noLogo, noSocial, className }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -28,7 +28,7 @@ const Layout = ({ children, noLogo, noSocial }) => {
   return (
     <>
       <Header noLogo={noLogo} noSocial={noSocial} siteTitle={data.site.siteMetadata.title} />
-      <div className="wrapper">
+      <div>
         <main className="container">{children}</main>
       </div>
       <Footer noLogo={noLogo} noSocial={noSocial}/>
@@ -39,7 +39,8 @@ const Layout = ({ children, noLogo, noSocial }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   noLogo: PropTypes.bool,
-  noSocial: PropTypes.bool
+  noSocial: PropTypes.bool,
+  className: PropTypes.string  
 }
 
 export default Layout

@@ -2,6 +2,8 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Logo from '../images/Social_minds_logo.svg';
+import Social from "../components/social"
+import Nav from "../components/nav"
 
 import "./header.scss"
 
@@ -16,14 +18,11 @@ const Header = ({ siteTitle, noLogo, noSocial }) => (
                  <img alt={siteTitle} src={Logo} width="110" />
               </Link>
       }
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/episodes/">Episodes</Link>
-      <Link to="/about/">About</Link>
-      <Link to="/contact/">Contact</Link>
-    </nav>
+    <Nav/>
     { !noSocial &&
-        <>social links</>
+        <div className="social">
+      <Social/>
+        </div>
       }
     </div>
     </div>
