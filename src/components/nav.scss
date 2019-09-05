@@ -1,7 +1,8 @@
 nav {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  height: 50px;
 
   ul {
     margin: 0;
@@ -12,5 +13,10 @@ nav {
   li {
     display: inline-flex;
     margin: 0 20px;
+  }
+
+  a {
+    text-decoration: none;
+    font-family: "Gelion Regular", sans-serif;
   }
 }

@@ -7,23 +7,13 @@ import Nav from "../components/nav"
 
 import "./header.scss"
 
-const Header = ({ siteTitle, noLogo, noSocial }) => (
+const Header = ({ siteTitle }) => (
   <header>
     <div className="wrapper">
     <div className="container">
-      { !noLogo &&
-                <Link
-                to="/"
-              >
-                 <img alt={siteTitle} src={Logo} width="110" />
-              </Link>
-      }
+    <div className="nav-logo"><Link to="/"><img alt={siteTitle} src={Logo} width="110" /></Link></div>
     <Nav/>
-    { !noSocial &&
-        <div className="social">
-      <Social/>
-        </div>
-      }
+    <div className="social"><Social/></div>
     </div>
     </div>
   </header>
@@ -31,8 +21,6 @@ const Header = ({ siteTitle, noLogo, noSocial }) => (
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-  noLogo: PropTypes.bool,
-  noSocial: PropTypes.bool
 }
 
 Header.defaultProps = {

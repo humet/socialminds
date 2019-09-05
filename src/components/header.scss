@@ -17,31 +17,41 @@ header {
   }
 
   .container {
-    display: flex !important;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-content: center;
-    width: 100vw;
-  }
-
-  .social {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    height: 50px;
+    position: relative;
+  }
 
+  .nav-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .social {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
     ul {
       margin: 0;
       padding: 0;
       list-style: none;
     }
-
+  
     li {
       display: inline-flex;
-      margin: 0 10px;
-    }
-
-    a {
-      color: $black;
+      margin: 0 5px;
     }
   }
 }

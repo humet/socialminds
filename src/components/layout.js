@@ -26,20 +26,18 @@ const Layout = ({ children, noLogo, noSocial, className }) => {
   `)
 
   return (
-    <>
-      <Header noLogo={noLogo} noSocial={noSocial} siteTitle={data.site.siteMetadata.title} />
+    <div className={className}>
+      <Header siteTitle={data.site.siteMetadata.title} />
       <div>
         <main className="container">{children}</main>
       </div>
-      <Footer noLogo={noLogo} noSocial={noSocial}/>
-    </>
+      <Footer/>
+      </div>
   )
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  noLogo: PropTypes.bool,
-  noSocial: PropTypes.bool,
   className: PropTypes.string  
 }
 

@@ -1,13 +1,37 @@
 @import '../styles/main.scss';
 
-.home {
+.homepage {
+  min-height: 100vh;
+  height: auto;
+  width: 100vw;
+  background-image: url(../images/Background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  header {
+    border-bottom: 0px !important;
+
+    .container{
+      justify-content: center;
+    }
+
+    .nav-logo,
+    .social {
+      display: none;
+    }
+  }
 
   h1 {
     padding: 0;
     margin: 0;
   }
 
-  img {
+  .subtitle {
+    font-family: "Gelion Regular", sans-serif;
+  }
+
+  .logo {
     margin: 100px auto 30px;
     display: block;
   }
@@ -37,6 +61,10 @@
     a {
       color: $black;
     }
+  }
+
+  .footer{
+    display: none;
   }
 }
 
