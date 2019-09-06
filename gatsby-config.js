@@ -8,6 +8,16 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        baseUrl: "socialmind.wpengine.com",
+        protocol: "http",
+        hostingWPCOM: false,
+        verboseOutput: true,
+        useACF: true,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

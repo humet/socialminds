@@ -59,6 +59,10 @@ header {
 
     a {
       color: $dark-grey;
+
+      &:hover {
+        color: $pink;
+      }
     }
   }
 }

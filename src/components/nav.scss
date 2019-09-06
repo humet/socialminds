@@ -21,5 +21,12 @@ nav {
     text-decoration: none;
     font-family: "Gelion Regular", sans-serif;
     color: $dark-grey;
+
+    &.active,
+    &:hover {
+      color: $pink;
+      border-top:3px solid $pink;
+      padding: 14px 0;
+    }
   }
 }
