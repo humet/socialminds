@@ -11,6 +11,8 @@
 
   header {
     border-bottom: 0px !important;
+    position: relative;
+    background: transparent;
 
     .nav-logo,
     .social {
@@ -72,9 +74,10 @@
 
 .episodespage {
 
+  padding: 80px 0 0;
+
   h1 {
     padding: 0;
-    margin: 60px 0;
     text-align: center;
   }
 
@@ -82,9 +85,10 @@
 
 .contactpage {
 
+  padding: 80px 0 0;
+
   h1 {
     padding: 0;
-    margin: 60px 0;
     text-align: center;
   }
 
@@ -92,9 +96,10 @@
 
 .aboutpage {
 
+  padding: 80px 0 0;
+
   h1 {
     padding: 0;
-    margin: 60px 0;
     text-align: center;
   }
 
@@ -102,19 +107,10 @@
 
 .privacypage {
 
-  h1 {
-    padding: 0;
-    margin: 60px 0;
-    text-align: center;
-  }
-
-}
-
-.termspage {
+  padding: 80px 0 0;
 
   h1 {
     padding: 0;
-    margin: 60px 0;
     text-align: center;
   }
 
