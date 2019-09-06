@@ -23,6 +23,9 @@
     color: $white;
     font-size: 13px;
     height: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     .container {
       display: flex;
