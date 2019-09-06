@@ -20,11 +20,13 @@ const Footer = ({ noLogo}) => (
     </div>
     <div className="wrapper footer__bottom">
     <div className="container">
-      <div>
+    <div className="footer__bottom-link">
+      <div className="footer__links">
       <Link to="/privacy/">Privacy Policy</Link>
   © Social Chain {new Date().getFullYear()}
   </div>
-  <div className="footer-bottom-logo">
+  </div>
+  <div className="footer__bottom-logo">
   <a href="https://agency.socialchain.com" target="_blank" rel="noopener noreferrer"><img alt="logo" src={FooterLogo} width="85"/></a>
   </div>
   </div>
