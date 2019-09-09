@@ -8,6 +8,39 @@
 const path = require(`path`)
 const slash = require(`slash`)
 
+  
+const DEPLOY_ENV = process.env.DEPLOY_ENV || 'lbn_published_production';
+
+/**
+ * Generate node edges
+ *
+ * @param {any} { node, actions, getNode }
+ */
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions;
+
+  /**
+   * If these don't exist, the LBN WordPress Plugin isn't installed – so build all posts.
+   */
+  if (
+    !Object.prototype.hasOwnProperty.call(node, 'meta') ||
+    !Object.prototype.hasOwnProperty.call(node.meta, 'lbn_published_production')
+    ) {
+    createNodeField({ node, name: 'deploy', value: true });
+    return;
+  }
+
+  let deploy;
+
+  if (node.meta[DEPLOY_ENV]) {
+    deploy = true;
+  } else {
+    deploy = false;
+  }
+
+  createNodeField({ node, name: 'deploy', value: deploy });
+};
+
 // Implement the Gatsby API “createPages”. This is
 // called after the Gatsby bootstrap is finished so you have
 // access to any information necessary to programmatically
