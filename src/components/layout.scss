@@ -94,21 +94,56 @@
     &__blocks {
       width: 33.33%;
       display: flex;
-      padding: 20px;
+      padding: 7px;
       box-sizing: border-box;
 
-      .gatsby-image-wrapper {
-        display: none !important;
+      &-text {
+        width: 70%;
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
       }
 
       &-content {
         width: 100%;
-        border: 1px solid $black;
-        height: 250px;
+        height: 300px;
         border-radius: 25px;
         padding: 20px;
         box-sizing: border-box;
+        background-size: cover;
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: rgba($black, 0.5);
+          border-radius: 25px;
+        }
+
+        p,
+        h2 {
+          color: $white; 
+          padding: 0;
+          margin: 0
+        }
       }
+    }
+
+    &__number {
+      font-size: 40px;
+    }
+
+    &__feat {
+      font-size: 26px;
+    }
+
+    &__title {
+      font-size: 13px;
     }
   }
 

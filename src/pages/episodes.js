@@ -3,7 +3,6 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 
 const EpisodesPage = () => (
   <Layout className="episodespage">
@@ -24,11 +23,7 @@ const EpisodesPage = () => (
               }
               featured_media {
                 localFile {
-                  childImageSharp {
-                    fixed(width: 400, height: 400, cropFocus: CENTER) {
-                      ...GatsbyImageSharpFixed_withWebp_tracedSVG
-                    }
-                  }
+                  url
                 }
               }
             }
@@ -41,11 +36,13 @@ const EpisodesPage = () => (
         {data.allWordpressPost.edges.map((episode) => {
           return (
             <div className="episodes__blocks">
-              <div className="episodes__blocks-content">
-            <p>Episode {episode.node.acf.episode_number}</p>
-            <p>feat. {episode.node.acf.featuring}</p>
-            <h2>{episode.node.title}</h2>
-            <Img fixed={episode.node.featured_media.localFile.childImageSharp.fixed}/>
+              <div className="episodes__blocks-content" style={episode.node.featured_media ? {backgroundImage: `url( ${ episode.node.featured_media.localFile.url })`} : {}} >
+              <div className="episodes__play">Play</div>
+            <div className="episodes__blocks-text">
+            <p className="episodes__number">Episode {episode.node.acf.episode_number}</p>
+            <p className="episodes__feat">feat. {episode.node.acf.featuring}</p>
+            <h2 className="episodes__title">{episode.node.title}</h2>
+            </div>
             </div>
             </div>
           )
