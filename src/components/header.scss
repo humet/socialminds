@@ -7,9 +7,9 @@ header {
   justify-content: center;
   align-content: center;
   position: fixed;
+  z-index: 1000;
   top: 0;
   background: $white; 
-  z-index: 1000;
 
   .wrapper {
     display: flex !important;
