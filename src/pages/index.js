@@ -45,6 +45,10 @@ const IndexPage = () => (
                   url
                 }
               }
+              status
+              fields {
+                deploy
+              }
             }
           }
         }
@@ -53,7 +57,9 @@ const IndexPage = () => (
     render={data => (
       <div className="episodes__rows">
         <Slider {...settings}>
-        {data.allWordpressPost.edges.map((episode) => {
+        {data.allWordpressPost.edges
+        .filter((episode) => episode.node.fields.deploy)
+        .map((episode) => {
           return (
             <div className="episodes__blocks">
               <div className="episodes__blocks-content" style={episode.node.featured_media ? {backgroundImage: `url( ${ episode.node.featured_media.localFile.url })`} : {}}  >
