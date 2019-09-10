@@ -98,7 +98,8 @@
       box-sizing: border-box;
 
       &-text {
-        width: 70%;
+        max-width: 260px;
+        width: 100%;
         display: block;
         position: absolute;
         bottom: 20px;
@@ -116,9 +117,11 @@
         justify-content: center;
         align-content: center;
         cursor: pointer;
+        background: transparent;
+        bottom: 80px;
 
         img {
-          margin: 6px 0;
+          margin: 3px 0;
           height: 22px;
           width: 14px;
         }
@@ -158,11 +161,11 @@
     }
 
     &__feat {
-      font-size: 26px;
+      font-size: 20px;
     }
 
     &__title {
-      font-size: 13px;
+      font-size: 14px;
     }
   }
 
