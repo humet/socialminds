@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import AudioPlayer from "react-h5-audio-player";
 import {AudioData} from "../hooks/use-audio-data.js"
 
 export const Player = ({
@@ -11,11 +10,10 @@ export const Player = ({
   const { edges } = AudioData()
   return (
     <div className="audio-player-block">
-    <AudioPlayer
-        autoPlay
-        ref={c => (Player.player = c)}
-        src={edges[0].node.acf.audio}
-      />
+          <audio
+        controls
+        src={edges[0].node.acf.audio} >
+    </audio>
       <div className="audio-player-block__block">
     <div className="audio-player-block__image"><img src={edges[0].node.featured_media.localFile.url}/></div>
     <div className="audio-player-block__content">
