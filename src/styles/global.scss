@@ -23,3 +23,102 @@ body {
   width: 100%;
   margin: 0 auto;
 }
+
+.audio-player-block {
+  position: fixed;
+  width: 100vw;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: $black;
+
+  &__block {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+
+  &__content {
+    display: block;
+    width: calc(100% - 100px);
+    padding-left: 20px;
+  }
+
+  &__image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    overflow: hidden;
+
+    img {
+      width: auto;
+      height: 100px;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__number {
+    margin-bottom: 20px;
+  }
+
+  &__number,
+  &__title {
+    color: $white;
+  }
+
+.react-h5-audio-player {
+
+  .toggle-play-wrapper {
+    position: absolute !important;
+    bottom: -50px;
+    left: 100px;
+  }
+
+    .flex {
+      background: $darker-grey !important;
+      padding: 15px 200px !important;
+      height: 20px !important;
+    }
+
+    .progress-bar-wrapper {
+      padding: 0 !important;
+      height: 20px !important;
+
+      .progress-bar {
+        top: 7px !important;
+        position: relative !important;
+      }
+
+      .indicator {
+        width: 5px !important;
+        height: 5px !important;
+        background: $pink !important;
+        box-shadow: none !important;
+        top: 7px !important;
+        border-radius: 0 !important;
+      }
+    }
+
+    .audio-info {
+      color: $white;
+    }
+
+    .time {
+      position: absolute !important;
+      left: -100px !important;
+      top: 0 !important;
+    }
+
+    .volume-controls {
+      position: absolute !important;
+      right: -100px !important;
+      top: 0 !important;
+    }
+  }
+}
