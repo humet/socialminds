@@ -131,7 +131,8 @@
       border-radius: 150px;
       outline: none;
       padding: 0 20px;
-      box-sizing: border-box;  
+      box-sizing: border-box; 
+      cursor: pointer;
 
       &-image{
         background: no-repeat;
@@ -142,6 +143,13 @@
         position: relative;
         left: -20px;
         border: 5px solid $pink;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        img {
+          margin: 0 auto;
+        }
       }
 
       &-content {

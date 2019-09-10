@@ -7,6 +7,7 @@ import Social from "../components/social"
 import Podcast from "../components/podcastimg"
 import { StaticQuery, graphql } from "gatsby"
 import Slider from "react-slick"
+import Playbtn from '../images/play.png'
 
 import "slick-carousel/slick/slick.scss";
 import "slick-carousel/slick/slick-theme.scss";
@@ -63,7 +64,7 @@ const IndexPage = () => (
         .map((episode) => {
           return (
             <div className="episodes__blocks">
-              <div className="episodes__blocks-image" style={episode.node.featured_media ? {backgroundImage: `url( ${ episode.node.featured_media.localFile.url })`} : {}}  ></div>
+              <div className="episodes__blocks-image" style={episode.node.featured_media ? {backgroundImage: `url( ${ episode.node.featured_media.localFile.url })`} : {}}  ><img alt="Play Podcast" className="Play Podcast" src={Playbtn} width="30"/></div>
               <div className="episodes__blocks-content">
             <p className="episodes__number">Episode {episode.node.acf.episode_number}</p>
             <p className="episodes__feat">feat. {episode.node.acf.featuring}</p>
