@@ -16,7 +16,7 @@ import "slick-carousel/slick/slick-theme.scss";
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
   };
 
 const IndexPage = () => (
@@ -39,6 +39,7 @@ const IndexPage = () => (
               acf {
                 episode_number
                 featuring
+                audio
               }
               featured_media {
                 localFile {
@@ -57,19 +58,22 @@ const IndexPage = () => (
     render={data => (
       <div className="episodes__rows">
         <Slider {...settings}>
+          <div className="next"></div>
         {data.allWordpressPost.edges
         .filter((episode) => episode.node.fields.deploy)
         .map((episode) => {
           return (
             <div className="episodes__blocks">
-              <div className="episodes__blocks-content" style={episode.node.featured_media ? {backgroundImage: `url( ${ episode.node.featured_media.localFile.url })`} : {}}  >
+              <div className="episodes__blocks-image" style={episode.node.featured_media ? {backgroundImage: `url( ${ episode.node.featured_media.localFile.url })`} : {}}  ></div>
+              <div className="episodes__blocks-content">
             <p className="episodes__number">Episode {episode.node.acf.episode_number}</p>
             <p className="episodes__feat">feat. {episode.node.acf.featuring}</p>
-            <h2 className="episodes__title">{episode.node.title}</h2>
+            <p className="episodes__title">{episode.node.title}</p>
             </div>
             </div>
           )
         })}
+        <div className="prev"></div>
         </Slider>
       </div>
     )}

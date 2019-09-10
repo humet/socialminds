@@ -71,6 +71,79 @@
   .footer{
     display: none;
   }
+
+  .episodes {
+
+    .slick-prev,
+    .slick_next {
+      &:before {
+      background: $black !important;
+    }
+  }
+
+    &__number {
+      padding: 0;
+      margin: 0 0 10px;
+      color: $pink;
+      text-align: left;
+      display: inline-block;
+    }
+    &__feat {
+      padding: 0;
+      margin: 0 0 10px 10px;
+      text-align: left;
+      display: inline-block;
+      font-size: 10px;
+    }
+    &__title {
+      padding: 0;
+      margin: 0 0 20px;
+      text-align: left;
+      color: $black;
+      font-size: 13px
+    }
+
+    &__rows{
+      max-width: 700px;
+      width: 100%;
+      margin: 60px auto 0;
+    }
+
+    &__blocks {
+      max-width: 700px;
+      width: calc(100% - 40px) !important;
+      margin: 0 auto;
+      border: 1px solid $grey; 
+      display: flex !important;
+      flex-direction: row;
+      justify-content: flex-start;
+      position: relative;
+      height: auto;
+      border-radius: 150px;
+      outline: none;
+      padding: 0 20px;
+      box-sizing: border-box;  
+
+      &-image{
+        background: no-repeat;
+        width: 150px;
+        height: 150px;
+        background-size: cover;
+        border-radius: 100px;
+        position: relative;
+        left: -20px;
+        border: 5px solid $pink;
+      }
+
+      &-content {
+        display: block;
+        padding: 20px;
+        box-sizing: border-box;
+        width: calc(100% - 150px);
+        text-align: left;
+      }
+    }
+  }
 }
 
 .episodespage {
