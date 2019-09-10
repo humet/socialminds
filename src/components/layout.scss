@@ -74,13 +74,6 @@
 
   .episodes {
 
-    .slick-prev,
-    .slick_next {
-      &:before {
-      background: $black !important;
-    }
-  }
-
     &__number {
       padding: 0;
       margin: 0 0 10px;
@@ -107,6 +100,22 @@
       max-width: 700px;
       width: 100%;
       margin: 60px auto 0;
+
+      .slick-prev:before {
+        color: $darker-grey !important;
+        content: "Next Episode" !important;
+        font-size: 10px;
+        font-family: "Gelion Regular", sans-serif;
+        position: relative;
+        left: -10px;
+      }
+
+      .slick-next:before {
+        color: $darker-grey !important;
+        content: "Previous Episode"  !important;
+        font-size: 10px;
+        font-family: "Gelion Regular", sans-serif;
+      }
     }
 
     &__blocks {

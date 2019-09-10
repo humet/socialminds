@@ -58,7 +58,6 @@ const IndexPage = () => (
     render={data => (
       <div className="episodes__rows">
         <Slider {...settings}>
-          <div className="next"></div>
         {data.allWordpressPost.edges
         .filter((episode) => episode.node.fields.deploy)
         .map((episode) => {
@@ -73,7 +72,6 @@ const IndexPage = () => (
             </div>
           )
         })}
-        <div className="prev"></div>
         </Slider>
       </div>
     )}
