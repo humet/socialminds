@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Component } from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,6 +8,7 @@ import Podcast from "../components/podcastimg"
 import { StaticQuery, graphql } from "gatsby"
 import Slider from "react-slick"
 import Playbtn from '../images/play.png'
+import Audio from "../components/audio"
 
 import "slick-carousel/slick/slick.scss";
 import "slick-carousel/slick/slick-theme.scss";
@@ -20,7 +21,9 @@ import "slick-carousel/slick/slick-theme.scss";
     slidesToScroll: 1,
   };
 
-const IndexPage = () => (
+class IndexPage extends Component {
+  render() {
+    return (
   <Layout className="homepage">
     <section className="home">
     <SEO title="Home" />
@@ -51,6 +54,7 @@ const IndexPage = () => (
               fields {
                 deploy
               }
+              excerpt
               content
             }
           }
@@ -70,7 +74,8 @@ const IndexPage = () => (
             <p className="episodes__number">Episode {episode.node.acf.episode_number}</p>
             <p className="episodes__feat">feat. {episode.node.acf.featuring}</p>
             <p className="episodes__title">{episode.node.title}</p>
-            <div className="episodes__content" dangerouslySetInnerHTML={{ __html: episode.node.content, }} />
+            <div className="episodes__content-excerpt"><span dangerouslySetInnerHTML={{ __html: episode.node.excerpt, }} /><div className="read-toggle">read more</div></div>
+            <div className="episodes__content-full"><span dangerouslySetInnerHTML={{ __html: episode.node.content, }} /><div className="read-toggle">read less</div></div>
             </div>
             </div>
           )
@@ -84,6 +89,9 @@ const IndexPage = () => (
       <Podcast/>
     </div>
     </section>
+          <Audio/>
   </Layout>
-)
+    )
+  }
+}
 export default IndexPage

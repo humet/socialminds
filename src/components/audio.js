@@ -10,10 +10,10 @@ export const Player = ({
   const { edges } = AudioData()
   return (
     <div className="audio-player-block">
-          <audio
+          {/* <audio
         controls
         src={edges[0].node.acf.audio} >
-    </audio>
+    </audio> */}
       <div className="audio-player-block__block">
     <div className="audio-player-block__image"><img src={edges[0].node.featured_media.localFile.url}/></div>
     <div className="audio-player-block__content">
