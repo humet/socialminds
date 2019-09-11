@@ -11,9 +11,9 @@ export const Player = ({
   return (
     <div className="audio-player">
       <div className="audio-player__timer-block">
-        <div className="time-start">00:01</div>
+        <div className="time-start">00:00</div>
         <div className="time-bar"/>
-        <div className="time-end">57:00</div>
+        <div className="time-end">00:00</div>
       </div>
     <div className="audio-player-block">
           {/* <audio

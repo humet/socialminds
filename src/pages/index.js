@@ -8,7 +8,6 @@ import Podcast from "../components/podcastimg"
 import { StaticQuery, graphql } from "gatsby"
 import Slider from "react-slick"
 import Playbtn from '../images/playbtn.svg'
-import Audio from "../components/audio"
 
 import "slick-carousel/slick/slick.scss";
 import "slick-carousel/slick/slick-theme.scss";
@@ -89,7 +88,6 @@ class IndexPage extends Component {
       <Podcast/>
     </div>
     </section>
-          <Audio/>
   </Layout>
     )
   }

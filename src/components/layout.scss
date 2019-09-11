@@ -180,7 +180,7 @@
 
 .episodespage {
 
-  padding: 80px 0 0;
+  padding: 80px 0 130px;
 
   h1 {
     padding: 0;
@@ -280,7 +280,7 @@
 
 .contactpage {
 
-  padding: 80px 0 0;
+  padding: 80px 0 130px;
 
   h1 {
     padding: 0;
@@ -422,6 +422,10 @@
       text-align: center;
       color: $dark-grey;
     }
+  }
+
+  .footer {
+    padding-bottom: 130px;
   }
 
 }
