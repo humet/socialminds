@@ -1,3 +1,12 @@
+  require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+const gravityforms = {
+  "key": process.env.GRAVITY_FORMS_KEY,
+  "secret": process.env.GRAVITY_FORMS_SECRET,
+}
+
 module.exports = {
   siteMetadata: {
     title: `Social Minds`,
@@ -22,6 +31,16 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve:`gatsby-source-gravityforms`,
+      options: {
+        baseUrl: `https://socialmind.wpengine.com`,
+        api: {
+            key: gravityforms.key,
+            secret: gravityforms.secret,
+        },
       },
     },
     `gatsby-transformer-sharp`,
