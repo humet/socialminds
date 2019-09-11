@@ -96,6 +96,15 @@
       font-size: 13px
     }
 
+    &__content {
+      p{
+      font-size: 13px;
+      text-align: left;
+      color: $dark-grey;
+      margin: 0;
+      }
+    }
+
     &__rows{
       max-width: 700px;
       width: 100%;

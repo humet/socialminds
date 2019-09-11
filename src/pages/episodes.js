@@ -34,6 +34,7 @@ const EpisodesPage = ({ }) => (
               fields {
                 deploy
               }
+              content
             }
           }
         }
@@ -52,6 +53,7 @@ const EpisodesPage = ({ }) => (
             <p className="episodes__number">Episode {episode.node.acf.episode_number}</p>
             <p className="episodes__feat">feat. {episode.node.acf.featuring}</p>
             <h2 className="episodes__title">{episode.node.title}</h2>
+            <div className="episodes__content" dangerouslySetInnerHTML={{ __html: episode.node.excerpt, }} />
             </div>
             </div>
             </div>
