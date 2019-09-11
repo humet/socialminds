@@ -3,6 +3,7 @@ import React from "react"
 import Logo from '../images/Social_minds_logo.svg';
 import FooterLogo from '../images/SocialChainLogo_FullWhite.svg';
 import Podcast from "../components/podcastimg"
+import Social from "../components/social"
 
 import "./footer.scss"
 
@@ -20,6 +21,9 @@ const Footer = ({ noLogo}) => (
     </div>
     <div className="wrapper footer__bottom">
     <div className="container">
+    <div className="footer__social">
+      <Social/>
+      </div>
     <div className="footer__bottom-link">
       <div className="footer__links">
       <Link to="/privacy/">Privacy Policy</Link>

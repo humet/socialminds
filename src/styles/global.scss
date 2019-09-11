@@ -57,19 +57,29 @@ body {
   }
 
   &-block {
+    flex-wrap: wrap;
     background: $black;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+
+    @media only screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+    }
 
     &__controls {
-      max-width: 50%;
+      max-width: 100%;
       width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
       margin: 0 auto;
       padding: 35px 20px;
+      box-sizing: border-box;
+
+      @media only screen and (min-width: 768px) {
+        max-width: 50%;
+      }
 
       &-rewind {
         background-image: url(../images/SocialMindsHOME-03.svg);
@@ -123,13 +133,18 @@ body {
     }
 
     &__block {
-      max-width: 50%;
+      max-width: 100%;
       width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
       margin: 0 auto;
-      padding: 20px 0;
+      padding: 20px 10px;
+      box-sizing: border-box;
+
+      @media only screen and (min-width: 768px) {
+        max-width: 50%;
+      }
     }
 
     &__content {
@@ -153,15 +168,15 @@ body {
       }
     }
 
-  &__number {
-    margin-bottom: 20px;
-  }
+    &__number {
+      margin-bottom: 20px;
+    }
 
-  &__number,
-  &__title {
-    color: $white;
+    &__number,
+    &__title {
+      color: $white;
+    }
   }
-}
 
   .react-h5-audio-player {
 

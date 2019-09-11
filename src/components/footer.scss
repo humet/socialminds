@@ -26,11 +26,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 40px 0;
+
+    @media only screen and (min-width: 768px) {
+      padding: 0;
+    }
 
     .container {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
+
+      @media only screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
     }
 
     &-link {
@@ -43,6 +54,33 @@
       img {
         margin: 0 auto;
         padding: 0;
+      }
+    }
+  }
+
+  &__social {
+    display: block;
+
+    @media only screen and (min-width: 768px) {
+      display: none;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  
+    li {
+      display: inline-flex;
+      margin: 0 5px;
+    }
+
+    a {
+      color: $dark-grey;
+
+      &:hover {
+        color: $pink;
       }
     }
   }
