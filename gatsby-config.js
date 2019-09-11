@@ -11,7 +11,7 @@ module.exports = {
       resolve: "gatsby-source-wordpress",
       options: {
         baseUrl: "socialmind.wpengine.com",
-        protocol: "http",
+        protocol: "https",
         hostingWPCOM: false,
         verboseOutput: true,
         useACF: true,

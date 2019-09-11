@@ -71,6 +71,96 @@
   .footer{
     display: none;
   }
+
+  .episodes {
+
+    &__number {
+      padding: 0;
+      margin: 0 0 10px;
+      color: $pink;
+      text-align: left;
+      display: inline-block;
+    }
+    &__feat {
+      padding: 0;
+      margin: 0 0 10px 10px;
+      text-align: left;
+      display: inline-block;
+      font-size: 10px;
+    }
+    &__title {
+      padding: 0;
+      margin: 0 0 20px;
+      text-align: left;
+      color: $black;
+      font-size: 13px
+    }
+
+    &__rows{
+      max-width: 700px;
+      width: 100%;
+      margin: 60px auto 0;
+
+      .slick-prev:before {
+        color: $darker-grey !important;
+        content: "Next Episode" !important;
+        font-size: 10px;
+        font-family: "Gelion Regular", sans-serif;
+        position: relative;
+        left: -10px;
+      }
+
+      .slick-next:before {
+        color: $darker-grey !important;
+        content: "Previous Episode"  !important;
+        font-size: 10px;
+        font-family: "Gelion Regular", sans-serif;
+      }
+    }
+
+    &__blocks {
+      max-width: 700px;
+      width: calc(100% - 40px) !important;
+      margin: 0 auto;
+      border: 1px solid $grey; 
+      display: flex !important;
+      flex-direction: row;
+      justify-content: flex-start;
+      position: relative;
+      height: auto;
+      border-radius: 150px;
+      outline: none;
+      padding: 0 20px;
+      box-sizing: border-box; 
+      cursor: pointer;
+
+      &-image{
+        background: no-repeat;
+        width: 150px;
+        height: 150px;
+        background-size: cover;
+        border-radius: 100px;
+        position: relative;
+        left: -20px;
+        border: 5px solid $pink;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        img {
+          margin: 0 auto;
+        }
+      }
+
+      &-content {
+        display: block;
+        padding: 20px;
+        box-sizing: border-box;
+        width: calc(100% - 150px);
+        text-align: left;
+      }
+    }
+  }
 }
 
 .episodespage {
@@ -98,11 +188,33 @@
       box-sizing: border-box;
 
       &-text {
-        width: 70%;
+        max-width: 260px;
+        width: 100%;
         display: block;
         position: absolute;
         bottom: 20px;
         right: 20px;
+      }
+
+      &-play {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        border-radius: 25px;
+        border: 2px solid $pink !important;
+        display:  flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        cursor: pointer;
+        background: transparent;
+        bottom: 80px;
+
+        img {
+          margin: 3px 0;
+          height: 22px;
+          width: 14px;
+        }
       }
 
       &-content {
@@ -136,14 +248,16 @@
 
     &__number {
       font-size: 40px;
+      margin-bottom: 10px !important;
     }
 
     &__feat {
-      font-size: 26px;
+      font-size: 20px;
+      margin-bottom: 10px !important;
     }
 
     &__title {
-      font-size: 13px;
+      font-size: 14px;
     }
   }
 
