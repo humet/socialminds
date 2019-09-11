@@ -24,44 +24,134 @@ body {
   margin: 0 auto;
 }
 
-.audio-player-block {
+.audio-player {
   position: fixed;
   width: 100vw;
   left: 0;
   bottom: 0;
   right: 0;
-  background: $black;
 
-  &__block {
-    max-width: 800px;
+  &__timer-block {
+    height: 30px;
     width: 100%;
+    display: block;
+    background-color: $darker-grey;
+    display: flex;
+    flex-direction: row;
+    padding: 5px 100px;
+    box-sizing: border-box;
+
+    .time-start,
+    .time-end {
+      color: $white;
+      margin: 0 20px;
+    }
+
+    .time-bar {
+      width: 100%;
+      height: 10px;
+      margin: 5px 0;
+      display: block;
+      background: rgba($dark-grey, 0.2);
+    }
+  }
+
+  &-block {
+    background: $black;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin: 0 auto;
-    padding: 20px 0;
-  }
 
-  &__content {
-    display: block;
-    width: calc(100% - 100px);
-    padding-left: 20px;
-  }
+    &__controls {
+      max-width: 50%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin: 0 auto;
+      padding: 35px 20px;
 
-  &__image {
-    width: 60px;
-    height: 60px;
-    border-radius: 50px;
-    overflow: hidden;
+      &-rewind {
+        background-image: url(../images/SocialMindsHOME-03.svg);
+        background-repeat: no-repeat;
+        display: block;
+        width: 38px;
+        height: 30px;
+        flex: 1;
+        cursor: pointer;
+      }
 
-    img {
-      width: auto;
-      height: 60px;
-      display: block;
-      margin: 0;
-      padding: 0;
+      &-back-30 {
+        background-image: url(../images/SocialMindsHOME-04.svg);
+        background-repeat: no-repeat;
+        display: block;
+        width: 30px;
+        height: 30px;
+        flex: 1;
+        cursor: pointer;
+      }
+
+      &-play {
+        background-image: url(../images/SocialMindsHOME-05.svg);
+        background-repeat: no-repeat;
+        display: block;
+        width: 30px;
+        height: 30px;
+        flex: 1;
+        cursor: pointer;
+      }
+
+      &-forward-30 {
+        background-image: url(../images/SocialMindsHOME-06.svg);
+        background-repeat: no-repeat;
+        display: block;
+        width: 30px;
+        height: 30px;
+        flex: 1;
+        cursor: pointer;
+      }
+
+      &-fastforward {
+        background-image: url(../images/SocialMindsHOME-07.svg);
+        background-repeat: no-repeat;
+        display: block;
+        width: 38px;
+        height: 27px;
+        flex: 1;
+        cursor: pointer;
+      }
     }
-  }
+
+    &__block {
+      max-width: 50%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    &__content {
+      display: block;
+      width: calc(100% - 100px);
+      padding-left: 20px;
+    }
+
+    &__image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50px;
+      overflow: hidden;
+
+      img {
+        width: auto;
+        height: 60px;
+        display: block;
+        margin: 0;
+        padding: 0;
+      }
+    }
 
   &__number {
     margin-bottom: 20px;
@@ -71,14 +161,15 @@ body {
   &__title {
     color: $white;
   }
+}
 
-.react-h5-audio-player {
+  .react-h5-audio-player {
 
-  .toggle-play-wrapper {
-    position: absolute !important;
-    bottom: -50px;
-    left: 100px;
-  }
+    .toggle-play-wrapper {
+      position: absolute !important;
+      bottom: -50px;
+      left: 100px;
+    }
 
     .flex {
       background: $darker-grey !important;
