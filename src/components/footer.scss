@@ -36,7 +36,6 @@
     background: $dark-grey;
     color: $white;
     font-size: 13px;
-    height: 65px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,6 +43,7 @@
 
     @media only screen and (min-width: 768px) {
       padding: 0;
+      height: 65px;
     }
 
     .container {
@@ -60,8 +60,11 @@
 
     &-link {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
+      @media only screen and (min-width: 768px) {
+        flex-direction: column;
+      }
     }
   
     &-logo {
@@ -74,6 +77,7 @@
 
   &__social {
     display: block;
+    margin: 0 auto 20px;
 
     @media only screen and (min-width: 768px) {
       display: none;
@@ -124,11 +128,17 @@
 
   &__links {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    margin: 0 auto 20px;
+    @media only screen and (min-width: 768px) {
+      flex-direction: row;
+      margin: 0;
+    }
 
     a {
       margin-right: 20px;
+      text-align: center;
     }
   }
 }
