@@ -180,14 +180,12 @@
 
 .episodespage {
 
-  padding: 80px 0 247px;
-  @media only screen and (min-width: 768px) {
-    padding: 80px 0 130px;
-  }
+    padding: 50px 0 0;
 
   h1 {
     padding: 0;
     text-align: center;
+    margin: 80px 0 40px;
   }
 
   .episodes {
@@ -283,11 +281,12 @@
 
 .contactpage {
 
-  padding: 80px 0 130px;
+  padding: 50px 0 0;
 
   h1 {
     padding: 0;
     text-align: center;
+    margin: 80px 0 40px;
   }
 
   .gravityform {
@@ -342,7 +341,7 @@
 .aboutpage {
   padding: 50px 0 0;
   @media only screen and (min-width: 768px) {
-    padding: 80px 0 0;
+    padding: 50px 0 0;
   }
 
   &.about-hero-img {
@@ -473,10 +472,6 @@
       color: $dark-grey;
       line-height: 24px;
     }
-  }
-
-  .footer {
-    padding-bottom: 130px;
   }
 
 }
