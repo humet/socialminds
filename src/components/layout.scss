@@ -129,10 +129,6 @@
 
     &__content-excerpt,
     &__content-full {
-      display: none;
-      @media only screen and (min-width: 768px) {
-      display: block;
-      }
 
       p{
       font-size: 13px;
