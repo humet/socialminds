@@ -16,7 +16,7 @@
   
     .podcast-img {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
       margin: 20px 0;
       @media only screen and (min-width: 768px) {
@@ -115,6 +115,7 @@
     color: $white;
     font-size: 13px;
     text-decoration: none;
+    margin: 0 5px;
 
     &:hover {
       color: $pink;
