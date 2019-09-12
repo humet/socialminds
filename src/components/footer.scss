@@ -4,17 +4,31 @@
   margin-top: 60px;
 
   &__top {
+    border-top: 0;
+    
+    @media only screen and (min-width: 768px) {
     height: 200px;
     border-top: 1px solid $grey;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    }
   
     .podcast-img {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
       margin: 20px 0;
+      @media only screen and (min-width: 768px) {
+        flex-direction: row;
+      }
+    }
+
+    .footer-logo {
+      display: none;
+      @media only screen and (min-width: 768px) {
+        display: flex;
+      }
     }
   }
 
