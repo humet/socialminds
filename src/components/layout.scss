@@ -182,7 +182,7 @@
 
     &__rows {
       max-width: 700px;
-      width: 70%;
+      width: 80%;
       margin: 60px auto 0;
 
       @media only screen and (min-width: 768px) {
@@ -207,6 +207,12 @@
         }
 
         button.slick-next {
+
+          right: -30px;
+          @media only screen and (min-width: 768px) {
+            right: -25px;
+          }
+
           &:before {
             color: $black;
             @media only screen and (min-width: 768px) {
