@@ -72,7 +72,7 @@ class IndexPage extends Component {
               <div className="episodes__blocks-content">
             <p className="episodes__number"><span className="desktop">Episode:</span><span className="mobile">Ep:</span> {episode.node.acf.episode_number}</p>
             <p className="episodes__feat"><span className="desktop">feat. </span><span className="mobile">ft.</span> {episode.node.acf.featuring}</p>
-            <p className="episodes__title">{episode.node.title}</p>
+            <p className="episodes__title"><span dangerouslySetInnerHTML={{ __html: episode.node.title}} /></p>
             <div className="episodes__content-excerpt"><span dangerouslySetInnerHTML={{ __html: episode.node.excerpt, }} /><div className="read-toggle">read more</div></div>
             <div className="episodes__content-full"><span dangerouslySetInnerHTML={{ __html: episode.node.content, }} /><div className="read-toggle">read less</div></div>
             </div>
