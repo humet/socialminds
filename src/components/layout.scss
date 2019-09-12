@@ -1,14 +1,14 @@
 @import '../styles/main.scss';
 
 .homepage {
-  // min-height: 100vh;
-  // background-image: url(../images/theo-eve-mobile-bg.jpg);
-  // background-repeat: no-repeat;
-  // background-size: contain;
-  // background-position: bottom center;
+  min-height: 100vh;
+  background-image: url(../images/theo-eve-mobile-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom center;
 
   @media only screen and (min-width: 768px) {
-    height: auto;
+    height: 100vh;
     width: 100vw;
     background-image: url(../images/Background.jpg);
     background-repeat: no-repeat;
@@ -149,45 +149,33 @@
 
     &__rows {
       max-width: 700px;
-      width: 100%;
+      width: 80%;
       margin: 60px auto 0;
+
+      @media only screen and (min-width: 768px) {
+        width: 100%;
+      }
 
       .slick-slider {
         position: relative;
 
-        .slick-prev:before {
-          color: $darker-grey !important;
-          content: "Next Episode" !important;
-          font-size: 10px;
-          font-family: "Gelion Regular", sans-serif;
+        button.slick-prev {
           position: absolute;
-          left: 50px !important;
-          bottom: -100px !important;
-
-          @media only screen and (min-width: 768px) {
+          left: -35px;
+          &:before {
             color: $darker-grey !important;
             content: "Next Episode" !important;
             font-size: 10px;
             font-family: "Gelion Regular", sans-serif;
-            position: relative;
-            left: -10px;
           }
         }
 
-        .slick-next:before {
-          color: $darker-grey !important;
-          content: "Previous Episode" !important;
-          font-size: 10px;
-          font-family: "Gelion Regular", sans-serif;
-          position: absolute;
-          right: 50px !important;
-          bottom: -100px !important;
-
-          @media only screen and (min-width: 768px) {
-          color: $darker-grey !important;
-          content: "Previous Episode" !important;
-          font-size: 10px;
-          font-family: "Gelion Regular", sans-serif;
+        button.slick-next {
+          &:before {
+            color: $darker-grey !important;
+            content: "Previous Episode" !important;
+            font-size: 10px;
+            font-family: "Gelion Regular", sans-serif;
           }
         }
       }
