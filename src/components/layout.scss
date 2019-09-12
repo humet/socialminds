@@ -198,18 +198,28 @@
     }
 
     &__blocks {
-      width: 366.63px;
+      max-width: 366.63px;
+      width: 100%;
       display: flex;
       padding: 7px;
       box-sizing: border-box;
 
       &-text {
-        max-width: 260px;
+        max-width: 215px !important;
         width: 100%;
         display: block;
         position: absolute;
         bottom: 20px;
         right: 20px;
+        left: 70px;
+        @media only screen and (min-width: 768px) {
+        max-width: 260px !important;
+        width: 100%;
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        }
       }
 
       &-play {
