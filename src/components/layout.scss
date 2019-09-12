@@ -2,21 +2,35 @@
 
 .homepage {
   min-height: 100vh;
+  background-image: url(../images/theo-eve-mobile-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom center;
+
+  @media only screen and (min-width: 768px) {
   height: auto;
   width: 100vw;
   background-image: url(../images/Background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  }
 
   header {
     border-bottom: 0px !important;
     position: relative;
     background: transparent;
 
-    .nav-logo,
     .social {
       display: none;
+    }
+
+    .nav-logo {
+      display: block;
+
+      @media only screen and (min-width: 768px) {
+        display:  none;
+      }
     }
   }
 
@@ -30,8 +44,15 @@
   }
 
   .logo {
-    margin: 125px auto 30px;
-    display: block;
+    width: 100%;
+    padding: 50px 20px 10px;
+    box-sizing: border-box;
+    margin: 0;
+
+    @media only screen and (min-width: 768px) {
+      margin: 125px auto 30px;
+      display: block;
+    }
   }
 
   p {
@@ -62,10 +83,13 @@
   }
 
   .podcast-img {
+    display: none;
+    @media only screen and (min-width: 768px) {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin: 60px 0;
+    }
   }
 
   .footer{
@@ -80,13 +104,20 @@
       color: $pink;
       text-align: left;
       display: inline-block;
+      font-size: 15px;
+      @media only screen and (min-width: 768px) {
+        font-size: 21px;
+        }
     }
     &__feat {
       padding: 0;
-      margin: 0 0 10px 10px;
+      margin: 0 0 10px 5px;
       text-align: left;
       display: inline-block;
       font-size: 10px;
+      @media only screen and (min-width: 768px) {
+        margin: 0 0 10px 10px;
+        }
     }
     &__title {
       padding: 0;
@@ -98,6 +129,11 @@
 
     &__content-excerpt,
     &__content-full {
+      display: none;
+      @media only screen and (min-width: 768px) {
+      display: block;
+      }
+
       p{
       font-size: 13px;
       text-align: left;
@@ -133,46 +169,75 @@
     }
 
     &__blocks {
-      max-width: 700px;
-      width: calc(100% - 40px) !important;
+      width: calc(100% - 20px) !important;
       margin: 0 auto;
       border: 1px solid $grey; 
       display: flex !important;
       flex-direction: row;
-      justify-content: flex-start;
+      justify-content: flex-end;
       position: relative;
       height: auto;
-      border-radius: 150px;
+      border-radius: 34px;
       outline: none;
       padding: 0 20px;
       box-sizing: border-box; 
       cursor: default;
 
+      @media only screen and (min-width: 768px) {
+        max-width: 700px;
+        width: calc(100% - 40px) !important;
+        margin: 0 auto;
+        border: 1px solid $grey; 
+        display: flex !important;
+        flex-direction: row;
+        justify-content: flex-end;
+        position: relative;
+        height: auto;
+        border-radius: 150px;
+        outline: none;
+        padding: 0 20px;
+        box-sizing: border-box; 
+        cursor: default;
+      }
+
       &-image{
         background: no-repeat;
-        width: 150px;
-        height: 150px;
+        width: 60px;
+        height: 60px;
         background-size: cover;
         border-radius: 100px;
-        position: relative;
-        left: -20px;
+        position: absolute;
+        left: 0;
         border: 5px solid $pink;
         display: flex;
         flex-direction: column;
         justify-content: center;
         cursor: pointer;
+        @media only screen and (min-width: 768px) {
+        background: no-repeat;
+        width: 150px;
+        height: 150px;
+        }
 
         img {
-          margin: 0 auto;
+          width: 20px;
+          @media only screen and (min-width: 768px) {
+            margin: 0 auto;
+            height: auto;
+          }
         }
       }
 
       &-content {
         display: block;
-        padding: 20px;
         box-sizing: border-box;
-        width: calc(100% - 150px);
+        padding: 5px;
+        width: calc(100% - 70px);
         text-align: left;
+        @media only screen and (min-width: 768px) {
+          width: calc(100% - 150px);
+          padding: 20px;
+        }
       }
     }
   }
