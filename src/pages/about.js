@@ -11,11 +11,13 @@ const AboutPage = () => (
     <div className="hero-text">
     <SEO title="About" />
       <h1><img alt="logo" src={LogoWhite} width="512"/></h1>
-      <p>Social Minds is the UK’s first-ever dedicated social media marketing podcast, brought to you by Social Chain. Each week we’re joined by leaders - in all sectors - to learn the global impact social media is having on every corner of the business world. We translate the marketing jargon you hear every day, leave buzzwords at the door and speak to social media headlines in a way anyone can understand.</p>
+      <p className="desktop">Social Minds is the UK’s first-ever dedicated social media marketing podcast, brought to you by Social Chain. Each week we’re joined by leaders - in all sectors - to learn the global impact social media is having on every corner of the business world. We translate the marketing jargon you hear every day, leave buzzwords at the door and speak to social media headlines in a way anyone can understand.</p>
       </div>
     <section className="about">
-    <h2>Hosted by...</h2>
+    <h2 className="desktop">Hosted by...</h2>
     <div className="host">
+    <p className="mobile about-us-text">Social Minds is the UK’s first-ever dedicated social media marketing podcast, brought to you by Social Chain. Each week we’re joined by leaders - in all sectors - to learn the global impact social media is having on every corner of the business world. We translate the marketing jargon you hear every day, leave buzzwords at the door and speak to social media headlines in a way anyone can understand.</p>
+    <h2 className="mobile">Hosted by...</h2>
       <div className="host__block">
         <div className="host__img"><img alt="Theo" src={HostTheo} width="150"/></div>
         <div className="host__name">Theo Watt</div>

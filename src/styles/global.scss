@@ -234,3 +234,17 @@ body {
   font-size: 13px;
   cursor: pointer;
 }
+
+.desktop {
+  display:  none;
+  @media only screen and (min-width: 768px) {
+    display: block;
+  }
+}
+
+.mobile {
+  display:  block;
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+}

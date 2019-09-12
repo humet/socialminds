@@ -32,8 +32,8 @@ const Layout = ({ children, noLogo, noSocial, className }) => {
       <div>
         <main className="container">{children}</main>
       </div>
-      <Audio/>
       <Footer/>
+      {/* <Audio/> */}
       </div>
   )
 }
