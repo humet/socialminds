@@ -101,7 +101,7 @@
 
     &__number {
       padding: 0;
-      margin: 0 0 10px;
+      margin: 0 0 5px;
       color: $pink;
       text-align: left;
       display: inline-block;
@@ -109,18 +109,47 @@
 
       @media only screen and (min-width: 768px) {
         font-size: 21px;
+        margin: 0 0 10px;
+      }
+
+      .desktop {
+        display:  none;
+        @media only screen and (min-width: 768px) {
+          display: inline-block;
+        }
+      }
+      
+      .mobile {
+        display:  inline-block;
+        @media only screen and (min-width: 768px) {
+          display: none;
+        }
       }
     }
 
     &__feat {
       padding: 0;
-      margin: 0 0 10px 5px;
+      margin: 0 0 5px 5px;
       text-align: left;
       display: inline-block;
       font-size: 10px;
 
       @media only screen and (min-width: 768px) {
         margin: 0 0 10px 10px;
+      }
+
+      .desktop {
+        display:  none;
+        @media only screen and (min-width: 768px) {
+          display: inline-block;
+        }
+      }
+      
+      .mobile {
+        display:  inline-block;
+        @media only screen and (min-width: 768px) {
+          display: none;
+        }
       }
     }
 
@@ -129,17 +158,21 @@
       margin: 0 0 20px;
       text-align: left;
       color: $black;
-      font-size: 13px
+      font-size: 13px;
     }
 
     &__content-excerpt,
     &__content-full {
 
       p {
-        font-size: 13px;
+        font-size: 10px;
         text-align: left;
         color: $dark-grey;
         margin: 0;
+
+        @media only screen and (min-width: 768px) {
+          font-size: 13px;
+        }
       }
     }
 
@@ -163,19 +196,25 @@
           position: absolute;
           left: -35px;
           &:before {
+            color: $black;
+            @media only screen and (min-width: 768px) {
             color: $darker-grey !important;
             content: "Next Episode" !important;
             font-size: 10px;
             font-family: "Gelion Regular", sans-serif;
+            }
           }
         }
 
         button.slick-next {
           &:before {
+            color: $black;
+            @media only screen and (min-width: 768px) {
             color: $darker-grey !important;
             content: "Previous Episode" !important;
             font-size: 10px;
             font-family: "Gelion Regular", sans-serif;
+            }
           }
         }
       }
