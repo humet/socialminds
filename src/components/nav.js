@@ -21,6 +21,7 @@ handleClick(){
 
   render() {
     return(
+      <div>
       <nav className={this.state.showMenu ? 'show' : 'hide'}>
       <ul>
       <li><Link to="/" activeClassName="active">Home</Link></li>
@@ -28,9 +29,10 @@ handleClick(){
       <li><Link to="/about/" activeClassName="active">About</Link></li>
       <li><Link to="/contact/" activeClassName="active">Contact</Link></li>
       </ul>
-      <div className="burger" onClick={this.handleClick}><FontAwesomeIcon icon={faBars} size="1x" /></div>
       <div className="close" onClick={this.handleClick}><FontAwesomeIcon icon={faTimes} size="1x" /></div>
       </nav>
+      <div className="burger" onClick={this.handleClick}><FontAwesomeIcon icon={faBars} size="1x" /></div>
+      </div>
     )
   }
 }

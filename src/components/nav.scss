@@ -1,6 +1,7 @@
 @import '../styles/main.scss';
 
 nav {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100vh;
@@ -10,13 +11,14 @@ nav {
   right: 0;
   top: 0;
   bottom: 0;
+  z-index: 100;
 
   &.hide {
     display: none;
-  }
 
-  &.show{
-    display: flex;
+    @media only screen and (min-width: 768px) {
+      display: block;
+    }
   }
   
   @media only screen and (min-width: 768px) {
@@ -72,18 +74,6 @@ nav {
     }
   }
 
-  .burger {
-    color: $black !important;
-    font-size: 30px;
-    position: fixed;
-    top: 10px;
-    right: 30px;
-    display: block;
-    @media only screen and (min-width: 768px) {
-      display: none;
-    }
-  }
-
   .close {
     color: $white !important;
     font-size: 30px;
@@ -94,5 +84,17 @@ nav {
     @media only screen and (min-width: 768px) {
       display: none;
     }
+  }
+}
+
+.burger {
+  color: $black !important;
+  font-size: 30px;
+  position: fixed;
+  top: 10px;
+  right: 30px;
+  display: block;
+  @media only screen and (min-width: 768px) {
+    display: none;
   }
 }
