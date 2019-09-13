@@ -1,7 +1,7 @@
 @import '../styles/main.scss';
 
 .homepage {
-  min-height: 100vh;
+  min-height: 110vh;
   background-image: url(../images/theo-eve-mobile-bg.jpg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -83,12 +83,12 @@
   }
 
   .podcast-img {
-    display: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px 0 60px;
 
     @media only screen and (min-width: 768px) {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
       margin: 60px 0;
     }
   }
@@ -274,6 +274,7 @@
 
         @media only screen and (min-width: 768px) {
           background: no-repeat;
+          background-size: cover;
           width: 150px;
           height: 150px;
         }
