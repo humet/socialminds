@@ -229,7 +229,8 @@ body {
   }
 }
 
-.read-toggle {
+.read-more-toggle,
+.read-less-toggle {
   color: $pink;
   font-size: 13px;
   cursor: pointer;

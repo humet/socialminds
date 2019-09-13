@@ -1,14 +1,14 @@
 @import '../styles/main.scss';
 
 .homepage {
-  min-height: 110vh;
+  height: 110vh;
   background-image: url(../images/theo-eve-mobile-bg.jpg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom center;
 
   @media only screen and (min-width: 768px) {
-    height: 100vh;
+    height: 100vh !important;
     width: 100vw;
     background-image: url(../images/Background.jpg);
     background-repeat: no-repeat;
@@ -322,6 +322,13 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
+      z-index: 1000;
+      @media only screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      }
     }
 
     &__blocks {
