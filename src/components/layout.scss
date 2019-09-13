@@ -90,6 +90,7 @@
 
     @media only screen and (min-width: 768px) {
       margin: 60px 0;
+      position: fixed;
     }
   }
 
@@ -113,14 +114,16 @@
       }
 
       .desktop {
-        display:  none;
+        display: none;
+
         @media only screen and (min-width: 768px) {
           display: inline-block;
         }
       }
-      
+
       .mobile {
-        display:  inline-block;
+        display: inline-block;
+
         @media only screen and (min-width: 768px) {
           display: none;
         }
@@ -139,14 +142,16 @@
       }
 
       .desktop {
-        display:  none;
+        display: none;
+
         @media only screen and (min-width: 768px) {
           display: inline-block;
         }
       }
-      
+
       .mobile {
-        display:  inline-block;
+        display: inline-block;
+
         @media only screen and (min-width: 768px) {
           display: none;
         }
@@ -176,10 +181,6 @@
       }
     }
 
-    &__content-full {
-      display: none;
-    }
-
     &__rows {
       max-width: 700px;
       width: 80%;
@@ -195,13 +196,15 @@
         button.slick-prev {
           position: absolute;
           left: -35px;
+
           &:before {
             color: $black;
+
             @media only screen and (min-width: 768px) {
-            color: $darker-grey !important;
-            content: "Next Episode" !important;
-            font-size: 10px;
-            font-family: "Gelion Regular", sans-serif;
+              color: $darker-grey !important;
+              content: "Next Episode" !important;
+              font-size: 10px;
+              font-family: "Gelion Regular", sans-serif;
             }
           }
         }
@@ -209,17 +212,19 @@
         button.slick-next {
 
           right: -30px;
+
           @media only screen and (min-width: 768px) {
             right: -25px;
           }
 
           &:before {
             color: $black;
+
             @media only screen and (min-width: 768px) {
-            color: $darker-grey !important;
-            content: "Previous Episode" !important;
-            font-size: 10px;
-            font-family: "Gelion Regular", sans-serif;
+              color: $darker-grey !important;
+              content: "Previous Episode" !important;
+              font-size: 10px;
+              font-family: "Gelion Regular", sans-serif;
             }
           }
         }
@@ -300,6 +305,27 @@
           width: calc(100% - 150px);
           padding: 20px;
         }
+
+
+        .hide-description {
+          .episodes__content-excerpt {
+            display: block !important;
+          }
+
+          .episodes__content-full {
+            display: none !important;
+          }
+        }
+
+        .show-description {
+          .episodes__content-excerpt {
+            display: none !important;
+          }
+
+          .episodes__content-full {
+            display: block !important;
+          }
+        }
       }
     }
   }
@@ -323,11 +349,12 @@
       flex-wrap: wrap;
       justify-content: center;
       z-index: 1000;
+
       @media only screen and (min-width: 768px) {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
 
