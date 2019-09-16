@@ -32,15 +32,15 @@ const Layout = ({ children, noLogo, noSocial, className }) => {
       <div>
         <main className="container">{children}</main>
       </div>
-      <Footer/>
-      {/* <Audio/> */}
-      </div>
+      <Footer />
+      <Audio />
+    </div>
   )
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  className: PropTypes.string  
+  className: PropTypes.string,
 }
 
 export default Layout
