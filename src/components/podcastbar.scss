@@ -14,8 +14,12 @@
     background-color: $darker-grey;
     display: flex;
     flex-direction: row;
-    padding: 5px 100px;
+    padding: 5px 10px;
     box-sizing: border-box;
+
+    @media only screen and (min-width: 768px) {
+      padding: 5px 100px;
+    }
 
     .time-start,
     .time-end {
@@ -57,8 +61,11 @@
       flex-direction: row;
       justify-content: flex-start;
       margin: 0 auto;
-      padding: 35px 20px;
+      padding: 10px 10px;
       box-sizing: border-box;
+      @media only screen and (min-width: 768px) {
+        padding: 35px 20px;
+      }
 
       button {
         background-color: transparent;
@@ -80,18 +87,21 @@
       &-rewind {
         background-image: url(../images/SocialMindsHOME-03.svg);
         background-repeat: no-repeat;
+        background-position: center center;
         display: block;
-        width: 38px;
+        width: 20%;
         height: 30px;
         flex: 1;
+        padding: 0 10px;
         cursor: pointer;
       }
 
       &-back-30 {
         background-image: url(../images/SocialMindsHOME-04.svg);
         background-repeat: no-repeat;
+        background-position: center center;
         display: block;
-        width: 30px;
+        width: 20%;
         height: 30px;
         flex: 1;
         cursor: pointer;
@@ -100,8 +110,9 @@
       &-play {
         background-image: url(../images/SocialMindsHOME-05.svg);
         background-repeat: no-repeat;
+        background-position: center center;
         display: block;
-        width: 30px;
+        width: 20%;
         height: 30px;
         flex: 1;
         cursor: pointer;
@@ -110,8 +121,9 @@
       &-pause {
         background-image: url(../images/icon-pause.svg);
         background-repeat: no-repeat;
+        background-position: center center;
         display: block;
-        width: 30px;
+        width: 20%;
         height: 30px;
         flex: 1;
         cursor: pointer;
@@ -120,8 +132,9 @@
       &-forward-30 {
         background-image: url(../images/SocialMindsHOME-06.svg);
         background-repeat: no-repeat;
+        background-position: center center;
         display: block;
-        width: 30px;
+        width: 20%;
         height: 30px;
         flex: 1;
         cursor: pointer;
@@ -130,8 +143,9 @@
       &-fastforward {
         background-image: url(../images/SocialMindsHOME-07.svg);
         background-repeat: no-repeat;
+        background-position: center center; 
         display: block;
-        width: 38px;
+        width: 20%;
         height: 27px;
         flex: 1;
         cursor: pointer;
