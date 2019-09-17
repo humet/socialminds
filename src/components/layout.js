@@ -8,7 +8,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import Audio from "../components/audio"
 
 import Header from "./header"
 import Footer from "./footer"
@@ -33,7 +32,6 @@ const Layout = ({ children, noLogo, noSocial, className }) => {
         <main className="container">{children}</main>
       </div>
       <Footer />
-      <Audio />
     </div>
   )
 }

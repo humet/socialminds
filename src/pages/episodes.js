@@ -1,11 +1,13 @@
 import React from "react"
-
+import { EpisodeConsumer } from "../components/context"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { StaticQuery, graphql } from "gatsby"
 import Play from "../images/play.png"
 
 const EpisodesPage = () => (
+<EpisodeConsumer>
+  {context=> (
   <Layout className="episodespage">
     <section className="episodes">
       <SEO title="Episodes" />
@@ -54,17 +56,10 @@ const EpisodesPage = () => (
                           : {}
                       }
                     >
+                      {episode.node.acf.audio &&
                       <button
                         className="episodes__blocks-play"
-                        onClick={event =>
-                          this.handlePlayClick(
-                            event,
-                            episode.node.acf.audio,
-                            episode.node.acf.episode_number,
-                            episode.node.title,
-                            episode.node.featured_media.localFile.url
-                          )
-                        }
+                        onClick={() => context.setCurrentPlaying(episode.node)}
                       >
                         <img
                           alt="Play Podcast"
@@ -73,6 +68,7 @@ const EpisodesPage = () => (
                           width="14"
                         />
                       </button>
+                      }
                       <div className="episodes__blocks-text">
                         <p className="episodes__number">
                           Episode {episode.node.acf.episode_number}
@@ -92,7 +88,8 @@ const EpisodesPage = () => (
         )}
       />
     </section>
-  </Layout>
+  </Layout>)}
+  </EpisodeConsumer>
 )
 
 export default EpisodesPage

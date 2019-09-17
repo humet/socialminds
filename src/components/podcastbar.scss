@@ -1,0 +1,236 @@
+@import "../styles/main.scss";
+
+.audio-player {
+  position: fixed;
+  width: 100vw;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  &__timer-block {
+    height: 30px;
+    width: 100%;
+    display: block;
+    background-color: $darker-grey;
+    display: flex;
+    flex-direction: row;
+    padding: 5px 100px;
+    box-sizing: border-box;
+
+    .time-start,
+    .time-end {
+      color: $white;
+      margin: 0 20px;
+    }
+
+    .time-bar {
+      width: 100%;
+      height: 10px;
+      margin: 5px 0;
+      display: block;
+      background: rgba($dark-grey, 0.2);
+      position: relative;
+    }
+
+    .time-bar-progress {
+     background-color: $pink;
+     position: absolute;
+     height: 100%; 
+    }
+  }
+
+  &-block {
+    flex-wrap: wrap;
+    background: $black;
+
+    @media only screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+    }
+
+    &__controls {
+      max-width: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin: 0 auto;
+      padding: 35px 20px;
+      box-sizing: border-box;
+
+      button {
+        background-color: transparent;
+        border: none;
+      }
+
+      button:focus {
+        outline: none;
+      }
+
+      button:disabled {
+        opacity: 0.2;
+      }
+
+      @media only screen and (min-width: 768px) {
+        max-width: 50%;
+      }
+
+      &-rewind {
+        background-image: url(../images/SocialMindsHOME-03.svg);
+        background-repeat: no-repeat;
+        display: block;
+        width: 38px;
+        height: 30px;
+        flex: 1;
+        cursor: pointer;
+      }
+
+      &-back-30 {
+        background-image: url(../images/SocialMindsHOME-04.svg);
+        background-repeat: no-repeat;
+        display: block;
+        width: 30px;
+        height: 30px;
+        flex: 1;
+        cursor: pointer;
+      }
+
+      &-play {
+        background-image: url(../images/SocialMindsHOME-05.svg);
+        background-repeat: no-repeat;
+        display: block;
+        width: 30px;
+        height: 30px;
+        flex: 1;
+        cursor: pointer;
+      }
+
+      &-pause {
+        background-image: url(../images/icon-pause.svg);
+        background-repeat: no-repeat;
+        display: block;
+        width: 30px;
+        height: 30px;
+        flex: 1;
+        cursor: pointer;
+      }
+
+      &-forward-30 {
+        background-image: url(../images/SocialMindsHOME-06.svg);
+        background-repeat: no-repeat;
+        display: block;
+        width: 30px;
+        height: 30px;
+        flex: 1;
+        cursor: pointer;
+      }
+
+      &-fastforward {
+        background-image: url(../images/SocialMindsHOME-07.svg);
+        background-repeat: no-repeat;
+        display: block;
+        width: 38px;
+        height: 27px;
+        flex: 1;
+        cursor: pointer;
+      }
+    }
+
+    &__block {
+      max-width: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin: 0 auto;
+      padding: 20px 10px;
+      box-sizing: border-box;
+
+      @media only screen and (min-width: 768px) {
+        max-width: 50%;
+      }
+    }
+
+    &__content {
+      display: block;
+      width: calc(100% - 100px);
+      padding-left: 20px;
+    }
+
+    &__image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50px;
+      overflow: hidden;
+
+      img {
+        width: auto;
+        height: 60px;
+        display: block;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    &__number {
+      margin-bottom: 20px;
+    }
+
+    &__number,
+    &__title {
+      color: $white;
+    }
+  }
+
+  .react-h5-audio-player {
+
+    .toggle-play-wrapper {
+      position: absolute !important;
+      bottom: -50px;
+      left: 100px;
+    }
+
+    .flex {
+      background: $darker-grey !important;
+      padding: 15px 200px !important;
+      height: 20px !important;
+    }
+
+    .progress-bar-wrapper {
+      padding: 0 !important;
+      height: 20px !important;
+
+      .progress-bar {
+        top: 7px !important;
+        position: relative !important;
+      }
+
+      .indicator {
+        width: 5px !important;
+        height: 5px !important;
+        background: $pink !important;
+        box-shadow: none !important;
+        top: 7px !important;
+        border-radius: 0 !important;
+      }
+    }
+
+    .audio-info {
+      color: $white;
+    }
+
+    .time {
+      position: absolute !important;
+      left: -100px !important;
+      top: 0 !important;
+    }
+
+    .volume-controls {
+      position: absolute !important;
+      right: -100px !important;
+      top: 0 !important;
+    }
+  }
+}

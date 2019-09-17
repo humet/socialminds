@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import Logo from "../images/Social_minds_logo.svg"
 import Social from "../components/social"
 import Podcast from "../components/podcastimg"
+import { EpisodeConsumer } from "../components/context"
 import { StaticQuery, graphql } from "gatsby"
 import Slider from "react-slick"
 import Playbtn from "../images/playbtn.svg"
@@ -14,10 +15,11 @@ import "slick-carousel/slick/slick-theme.scss"
 
 var settings = {
   dots: false,
-  infinite: true,
+  infinite: false,
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
+  rtl: true,
 }
 
 class IndexPage extends Component {
@@ -35,7 +37,9 @@ class IndexPage extends Component {
 
   render() {
     return (
-      <Layout className="homepage">
+      <EpisodeConsumer>
+        {context=> (
+          <Layout className="homepage">
         <section className="home">
           <SEO title="Home" />
           <h1>
@@ -81,7 +85,7 @@ class IndexPage extends Component {
                     .filter(episode => episode.node.fields.deploy)
                     .map(episode => {
                       return (
-                        <div className="episodes__blocks">
+                        <div className="episodes__blocks" key={episode.node.acf.episode_number}>
                           <div
                             className="episodes__blocks-image"
                             style={
@@ -92,12 +96,15 @@ class IndexPage extends Component {
                                 : {}
                             }
                           >
+                            {episode.node.acf.audio &&
                             <img
                               alt="Play Podcast"
                               className="Play Podcast"
                               src={Playbtn}
                               width="30"
+                              onClick={() => context.setCurrentPlaying(episode.node)}
                             />
+                            }
                           </div>
                           <div className="episodes__blocks-content">
                             <p className="episodes__number">
@@ -165,6 +172,8 @@ class IndexPage extends Component {
           </div>
         </section>
       </Layout>
+        )}
+      </EpisodeConsumer>
     )
   }
 }
