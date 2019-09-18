@@ -6,10 +6,9 @@
   background-size: contain;
   background-position: bottom center;
   padding-bottom: 117px;
-  min-height: 1000px;
 
   @include breakpoint(sm) {
-    height: 100vh !important;
+    min-height: 1000px;
     width: 100vw;
     background-image: url(../images/Background.jpg);
     background-repeat: no-repeat;
