@@ -63,6 +63,7 @@ const EpisodesPage = () => (
                     
                       {episode.node.acf.audio &&
                       <button
+                        name="Play"
                         className="episodes__blocks-play"
                         onClick={() => context.setCurrentPlaying(episode.node)}
                       >

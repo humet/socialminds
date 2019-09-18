@@ -126,15 +126,15 @@ class AudioPlayer extends Component {
         preload="metadata"
         />
         <div className="audio-player-block__controls">
-          <button className="audio-player-block__controls-rewind" onClick={() => context.setCurrentPlaying(this.props.allEpisodes[prevEp].node)} disabled={parseInt(episode.acf.episode_number) === 1} />
-          <button className="audio-player-block__controls-back-30" id="back-30" onClick={this.handlePlayerClick} />
+          <button title="Previous Podcast" className="audio-player-block__controls-rewind" onClick={() => context.setCurrentPlaying(this.props.allEpisodes[prevEp].node)} disabled={parseInt(episode.acf.episode_number) === 1} />
+          <button title="Back 30 Seconds" className="audio-player-block__controls-back-30" id="back-30" onClick={this.handlePlayerClick} />
           { this.state.player === "paused" ? (
-            <button className="audio-player-block__controls-play" onClick={this.togglePlay} />
+            <button title="Play" className="audio-player-block__controls-play" onClick={this.togglePlay} />
           ) : (
-            <button className="audio-player-block__controls-pause" onClick={this.togglePlay} />
+            <button title="Pause" className="audio-player-block__controls-pause" onClick={this.togglePlay} />
           )}
-          <button className="audio-player-block__controls-forward-30" id="forward-30" onClick={this.handlePlayerClick} />
-          <button className="audio-player-block__controls-fastforward" onClick={() => context.setCurrentPlaying(this.props.allEpisodes[nextEp].node)} disabled={parseInt(episode.acf.episode_number) === this.state.totalEpisodes} />
+          <button title="Forward 30 Seconds" className="audio-player-block__controls-forward-30" id="forward-30" onClick={this.handlePlayerClick} />
+          <button title="Next Podcast" className="audio-player-block__controls-fastforward" onClick={() => context.setCurrentPlaying(this.props.allEpisodes[nextEp].node)} disabled={parseInt(episode.acf.episode_number) === this.state.totalEpisodes} />
         </div>
         <div className="audio-player-block__block">
           <div className="audio-player-block__content">

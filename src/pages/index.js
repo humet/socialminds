@@ -102,7 +102,6 @@ class IndexPage extends Component {
                             {episode.node.acf.audio &&
                             <img
                               alt="Play Podcast"
-                              className="Play Podcast"
                               src={Playbtn}
                               width="30"
                               onClick={() => context.setCurrentPlaying(episode.node)}
