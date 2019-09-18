@@ -43,7 +43,7 @@ class IndexPage extends Component {
         {context=> (
           <Layout className="homepage">
         <section className="home">
-          <SEO title="Home" />
+          <SEO />
           <h1>
             <img alt="logo" className="logo" src={Logo} width="512" />
           </h1>

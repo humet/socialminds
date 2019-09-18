@@ -123,6 +123,7 @@ class AudioPlayer extends Component {
         <audio
         src={episode.acf.audio}
         ref={this.player}
+        preload="metadata"
         />
         <div className="audio-player-block__controls">
           <button className="audio-player-block__controls-rewind" onClick={() => context.setCurrentPlaying(this.props.allEpisodes[prevEp].node)} disabled={parseInt(episode.acf.episode_number) === 1} />

@@ -9,9 +9,14 @@ const gravityforms = {
 
 module.exports = {
   siteMetadata: {
-    title: `Social Minds`,
-    description: `Social Minds a podcast by Social Chain`,
-    author: `@thesocialchain`
+    title: "Social Minds",
+    titleTemplate: "%s | Social Minds Podcast",
+    defaultTitle: "Social Minds | A Social Chain Podcast",
+    description:
+      "Social Minds is the UK’s first-ever dedicated social media marketing podcast, brought to you by Social Chain.",
+    url: process.env.URL, // No trailing slash allowed!
+    image: "/static/images/socialimage.jpg", // Path to your image you placed in the 'static' folder
+    twitterUsername: "@thesocialchain",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -70,7 +75,6 @@ module.exports = {
       options: {
       iubendaOptions: {"lang":"en","siteId":1676133,"cookiePolicyId":76482076, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"position":"float-center","acceptButtonColor":"#0073CE","acceptButtonCaptionColor":"white","customizeButtonColor":"#DADADA","customizeButtonCaptionColor":"#4D4D4D","textColor":"black","backgroundColor":"white","backgroundOverlay":true }},
       // optional, if present, a Google Tag Manager event ("iubenda_consent_given") is triggered
-      googleTagManagerOptions: true
       },
     }
   ],
