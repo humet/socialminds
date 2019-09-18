@@ -69,7 +69,7 @@ class IndexPage extends Component {
                           url
                           childImageSharp {
                             fluid(maxWidth: 600) {
-                              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                              ...GatsbyImageSharpFluid_withWebp
                             }
                           }
                         }
