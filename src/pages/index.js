@@ -1,14 +1,16 @@
 import React, { Component } from "react"
+import { StaticQuery, graphql } from "gatsby"
+import Slider from "react-slick"
+import BackgroundImage from 'gatsby-background-image'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Logo from "../images/Social_minds_logo.svg"
 import Social from "../components/social"
 import Podcast from "../components/podcastimg"
 import { EpisodeConsumer } from "../components/context"
-import { StaticQuery, graphql } from "gatsby"
-import Slider from "react-slick"
+
 import Playbtn from "../images/playbtn.svg"
+import Logo from "../images/Social_minds_logo.svg"
 
 import "slick-carousel/slick/slick.scss"
 import "slick-carousel/slick/slick-theme.scss"
@@ -65,6 +67,11 @@ class IndexPage extends Component {
                       featured_media {
                         localFile {
                           url
+                          childImageSharp {
+                            fluid(maxWidth: 600) {
+                              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                            }
+                          }
                         }
                       }
                       status
@@ -86,15 +93,11 @@ class IndexPage extends Component {
                     .map(episode => {
                       return (
                         <div className="episodes__blocks" key={episode.node.acf.episode_number}>
-                          <div
+                          <BackgroundImage
+                            Tag="div"
                             className="episodes__blocks-image"
-                            style={
-                              episode.node.featured_media
-                                ? {
-                                    backgroundImage: `url( ${episode.node.featured_media.localFile.url})`,
-                                  }
-                                : {}
-                            }
+                            fluid={episode.node.featured_media.localFile.childImageSharp.fluid}
+                            backgroundColor={`#ff0066`}
                           >
                             {episode.node.acf.audio &&
                             <img
@@ -105,7 +108,7 @@ class IndexPage extends Component {
                               onClick={() => context.setCurrentPlaying(episode.node)}
                             />
                             }
-                          </div>
+                          </BackgroundImage>
                           <div className="episodes__blocks-content">
                             <p className="episodes__number">
                               Episode: {episode.node.acf.episode_number}

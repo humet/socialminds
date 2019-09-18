@@ -16,6 +16,11 @@ export const AudioData = () => {
               featured_media {
                 localFile {
                   url
+                  childImageSharp {
+                    fluid(maxWidth: 600) {
+                      ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    }
+                  }
                 }
               }
               status

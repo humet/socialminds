@@ -28,6 +28,7 @@ const Footer = ({ noLogo }) => (
         </div>
         <div className="footer__bottom-link">
           <div className="footer__links">
+          <Link to="/cookie/">Cookie Policy</Link>
             <Link to="/privacy/">Privacy Policy</Link>© Social Chain{" "}
             {new Date().getFullYear()}
           </div>

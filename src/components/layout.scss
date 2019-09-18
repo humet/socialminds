@@ -275,6 +275,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        overflow: hidden;
         align-items: center;
         cursor: pointer;
         margin: 0 auto;
@@ -282,9 +283,9 @@
         @include breakpoint(sm) {
           background: no-repeat;
           background-size: cover;
-          position: absolute;
-          width: 160px;
-          height: 160px;
+          position: absolute !important;
+          width: 170px;
+          height: 170px;
         }
 
         img {
@@ -419,16 +420,11 @@
         padding: 20px;
         box-sizing: border-box;
         background-size: cover;
+        background-color: #000;
         position: relative;
 
         &:before {
-          content: '';
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          background-color: rgba($black, 0.5);
+          opacity: 0.5 !important;
           border-radius: 25px;
         }
 
@@ -662,6 +658,10 @@
 .privacypage {
 
   padding: 80px 0 0;
+
+  section {
+    padding: 0 15px;
+  }
 
   h1 {
     padding: 0;

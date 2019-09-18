@@ -11,7 +11,7 @@ module.exports = {
   siteMetadata: {
     title: `Social Minds`,
     description: `Social Minds a podcast by Social Chain`,
-    author: `@gatsbyjs`,
+    author: `@thesocialchain`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -48,17 +48,30 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Social Minds Podcast`,
+        short_name: `Social Minds`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        background_color: `#ff0066`,
+        theme_color: `#ff0066`,
+        display: `standalone`,
+        icon: `static/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
+    {
+    resolve: "gatsby-plugin-google-tagmanager",
+    options: {
+      id: "GTM-WWXQLR9",
+      includeInDevelopment: false,
+      },
+    },  
+    {
+      resolve: 'gatsby-plugin-iubenda-cookie-footer',
+      options: {
+      iubendaOptions: {"lang":"en","siteId":1676133,"cookiePolicyId":76482076, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"position":"float-center","acceptButtonColor":"#0073CE","acceptButtonCaptionColor":"white","customizeButtonColor":"#DADADA","customizeButtonCaptionColor":"#4D4D4D","textColor":"black","backgroundColor":"white","backgroundOverlay":true }},
+      // optional, if present, a Google Tag Manager event ("iubenda_consent_given") is triggered
+      googleTagManagerOptions: true
+      },
+    }
   ],
 }

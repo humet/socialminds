@@ -2,6 +2,9 @@
 
 .footer {
   margin-top: 60px;
+  @include breakpoint(sm) {
+    padding-bottom: 140px;
+  }
 
   &__top {
     border-top: 0;

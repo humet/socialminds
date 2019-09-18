@@ -53,6 +53,7 @@ nav {
     font-family: "Gelion Regular", sans-serif;
     color: $white;
     font-size:  30px;
+    padding: 17px 0 14px;
 
     @include breakpoint(sm) {
     text-decoration: none;

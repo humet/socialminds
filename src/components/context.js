@@ -21,6 +21,11 @@ export function EpisodeProvider(props) {
             featured_media {
               localFile {
                 url
+                childImageSharp {
+                  fluid(maxWidth: 100) {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                  }
+                }
               }
             }
             status

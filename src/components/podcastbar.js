@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { EpisodeConsumer } from "./context"
 import { AudioData } from "../hooks/use-audio-data"
 import NProgress from "nprogress"
+import Img from "gatsby-image"
 
 import "./podcastbar.scss"
 
@@ -140,9 +141,9 @@ class AudioPlayer extends Component {
               <strong>Episode: {episode.acf.episode_number}</strong>
             </div>
             <div className="audio-player-block__image">
-            <img
+            <Img
               alt={episode.title}
-              src={episode.featured_media.localFile.url}
+              fluid={episode.featured_media.localFile.childImageSharp.fluid}
             />
           </div>
             <div className="audio-player-block__title">

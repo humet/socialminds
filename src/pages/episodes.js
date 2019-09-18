@@ -1,8 +1,11 @@
 import React from "react"
+import { StaticQuery, graphql } from "gatsby"
+import BackgroundImage from 'gatsby-background-image'
+
 import { EpisodeConsumer } from "../components/context"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { StaticQuery, graphql } from "gatsby"
+
 import Play from "../images/play.png"
 
 const EpisodesPage = () => (
@@ -28,6 +31,11 @@ const EpisodesPage = () => (
                   featured_media {
                     localFile {
                       url
+                      childImageSharp {
+                        fluid(maxWidth: 350) {
+                          ...GatsbyImageSharpFluid_withWebp
+                        }
+                      }
                     }
                   }
                   status
@@ -46,16 +54,13 @@ const EpisodesPage = () => (
               .map(episode => {
                 return (
                   <div className="episodes__blocks">
-                    <div
-                      className="episodes__blocks-content"
-                      style={
-                        episode.node.featured_media
-                          ? {
-                              backgroundImage: `url( ${episode.node.featured_media.localFile.url})`,
-                            }
-                          : {}
-                      }
-                    >
+                    <BackgroundImage
+                            Tag="div"
+                            className="episodes__blocks-content"
+                            fluid={episode.node.featured_media.localFile.childImageSharp.fluid}
+                            backgroundColor={`#000`}
+                          >
+                    
                       {episode.node.acf.audio &&
                       <button
                         className="episodes__blocks-play"
@@ -80,8 +85,10 @@ const EpisodesPage = () => (
                           {episode.node.title}
                         </h2>
                       </div>
-                    </div>
+
+                    </BackgroundImage>
                   </div>
+                  
                 )
               })}
           </div>

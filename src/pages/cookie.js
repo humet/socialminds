@@ -7,8 +7,8 @@ import GetPolicy from "../components/getPolicy"
 const PrivacyPage = () => (
   <Layout className="privacypage">
     <section className="privacy">
-      <SEO title="Privacy Policy" />
-      <GetPolicy id="76482076" />
+      <SEO title="Cookie Policy" />
+      <GetPolicy id="76482076/cookie-policy" />
     </section>
   </Layout>
 )
