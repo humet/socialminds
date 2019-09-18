@@ -232,6 +232,8 @@
 
     &__title {
       color: $white;
+      width: calc(100% - 75px);
+      float: right;
     }
   }
 
