@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { EpisodeConsumer } from "./context"
 import { AudioData } from "../hooks/use-audio-data"
+import NProgress from "nprogress"
 
 import "./podcastbar.scss"
 
@@ -39,6 +40,14 @@ class AudioPlayer extends Component {
         progressTime: (e.target.currentTime / e.target.duration) * 100
       });
     });
+    this.player.current.addEventListener("loadstart", e => {
+      console.log('start laoding')
+      NProgress.start()
+    })
+    this.player.current.addEventListener("canplay", e => {
+      console.log('finished laoding')
+      NProgress.done()
+    })
   }
 
   componentWillUnmount() {
