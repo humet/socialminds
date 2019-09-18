@@ -585,7 +585,11 @@
   h2 {
     padding: 0;
     text-align: center;
-    margin: 40px;
+    margin: 20px;
+
+    @include breakpoint(sm) {
+      margin: 40px;
+    }
   }
 
   .host {
@@ -610,7 +614,7 @@
     }
 
     &__block {
-      padding: 0 10px 60px;
+      padding: 0 10px 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
