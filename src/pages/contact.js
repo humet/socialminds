@@ -12,7 +12,7 @@ const ContactPage = () => (
       <h1>Get In touch</h1>
 
       {AllGravityData() && (
-        <GravityFormForm id={1} formData={AllGravityData()} />
+        <GravityFormForm id={1} formData={AllGravityData()} lambda={process.env.GATSBY_LAMBDA_ENDPOINT} />
       )}
     </section>
   </Layout>

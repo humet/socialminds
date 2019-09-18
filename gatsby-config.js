@@ -3,8 +3,8 @@ require("dotenv").config({
 })
 
 const gravityforms = {
-  key: process.env.GRAVITY_FORMS_KEY,
-  secret: process.env.GRAVITY_FORMS_SECRET,
+  "key": process.env.GATSBY_GRAVITY_FORMS_KEY,
+  "secret": process.env.GATSBY_GRAVITY_FORMS_SECRET,
 }
 
 module.exports = {
@@ -36,7 +36,7 @@ module.exports = {
     {
       resolve: `gatsby-source-gravityforms`,
       options: {
-        baseUrl: `https://socialmind.wpengine.com`,
+        baseUrl: `https://admin.socialmindspodcast.com`,
         api: {
           key: gravityforms.key,
           secret: gravityforms.secret,

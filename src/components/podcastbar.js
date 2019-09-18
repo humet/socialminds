@@ -41,11 +41,9 @@ class AudioPlayer extends Component {
       });
     });
     this.player.current.addEventListener("loadstart", e => {
-      console.log('start laoding')
       NProgress.start()
     })
     this.player.current.addEventListener("canplay", e => {
-      console.log('finished laoding')
       NProgress.done()
     })
   }
