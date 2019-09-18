@@ -108,22 +108,12 @@ class IndexPage extends Component {
                           </div>
                           <div className="episodes__blocks-content">
                             <p className="episodes__number">
-                              <span className="desktop">Episode:</span>
-                              <span className="mobile">Ep:</span>{" "}
-                              {episode.node.acf.episode_number}
+                              Episode: {episode.node.acf.episode_number}
                             </p>
                             <p className="episodes__feat">
-                              <span className="desktop">feat. </span>
-                              <span className="mobile">ft.</span>{" "}
-                              {episode.node.acf.featuring}
+                             feat. {episode.node.acf.featuring}
                             </p>
-                            <p className="episodes__title">
-                              <span
-                                dangerouslySetInnerHTML={{
-                                  __html: episode.node.title,
-                                }}
-                              />
-                            </p>
+                            <h2 className="episodes__title">{episode.node.title}</h2> 
                             <div
                               className={
                                 this.state.showDescription

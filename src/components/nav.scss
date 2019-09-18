@@ -16,12 +16,12 @@ nav {
   &.hide {
     display: none;
 
-    @media only screen and (min-width: 768px) {
+    @include breakpoint(sm) {
       display: block;
     }
   }
   
-  @media only screen and (min-width: 768px) {
+  @include breakpoint(sm) {
     display: block;
     flex-direction: column;
     justify-content: center;
@@ -41,7 +41,7 @@ nav {
     display: block;
     padding: 20px;
     text-align: center;
-    @media only screen and (min-width: 768px) {
+    @include breakpoint(sm) {
     display: inline-flex;
     margin: 0 20px;
     padding: 0;
@@ -54,7 +54,7 @@ nav {
     color: $white;
     font-size:  30px;
 
-    @media only screen and (min-width: 768px) {
+    @include breakpoint(sm) {
     text-decoration: none;
     font-family: "Gelion Regular", sans-serif;
     color: $dark-grey;
@@ -65,7 +65,7 @@ nav {
     &:hover {
       color: $white;
       font-size:  30px;
-      @media only screen and (min-width: 768px) {
+      @include breakpoint(sm) {
       color: $pink;
       border-top:3px solid $pink;
       padding: 14px 0;
@@ -81,7 +81,7 @@ nav {
     top: 10px;
     right: 30px;
     display: block;
-    @media only screen and (min-width: 768px) {
+    @include breakpoint(sm) {
       display: none;
     }
   }
@@ -91,10 +91,10 @@ nav {
   color: $black !important;
   font-size: 30px;
   position: absolute;
-  top: 10px;
-  right: 30px;
+  top: 5px;
+  right: 10px;
   display: block;
-  @media only screen and (min-width: 768px) {
+  @include breakpoint(sm) {
     display: none;
   }
 }

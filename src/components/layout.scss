@@ -1,19 +1,20 @@
 @import '../styles/main.scss';
 
 .homepage {
-  height: 110vh;
   background-image: url(../images/theo-eve-mobile-bg.jpg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom center;
+  padding-bottom: 117px;
 
-  @media only screen and (min-width: 768px) {
+  @include breakpoint(sm) {
     height: 100vh !important;
     width: 100vw;
     background-image: url(../images/Background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    padding-bottom: 0;
   }
 
   header {
@@ -28,7 +29,7 @@
     .nav-logo {
       display: block;
 
-      @media only screen and (min-width: 768px) {
+      @include breakpoint(sm) {
         display: none;
       }
     }
@@ -49,7 +50,7 @@
     box-sizing: border-box;
     margin: 0;
 
-    @media only screen and (min-width: 768px) {
+    @include breakpoint(sm) {
       margin: 125px auto 30px;
       display: block;
     }
@@ -88,7 +89,7 @@
     justify-content: center;
     margin: 20px 0 60px;
 
-    @media only screen and (min-width: 768px) {
+    @include breakpoint(sm) {
       margin: 60px 0;
     }
   }
@@ -107,7 +108,7 @@
       display: inline-block;
       font-size: 15px;
 
-      @media only screen and (min-width: 768px) {
+      @include breakpoint(sm) {
         font-size: 21px;
         margin: 0 0 10px;
       }
@@ -115,7 +116,7 @@
       .desktop {
         display: none;
 
-        @media only screen and (min-width: 768px) {
+        @include breakpoint(sm) {
           display: inline-block;
         }
       }
@@ -123,7 +124,7 @@
       .mobile {
         display: inline-block;
 
-        @media only screen and (min-width: 768px) {
+        @include breakpoint(sm) {
           display: none;
         }
       }
@@ -136,14 +137,14 @@
       display: inline-block;
       font-size: 10px;
 
-      @media only screen and (min-width: 768px) {
+      @include breakpoint(sm) {
         margin: 0 0 10px 10px;
       }
 
       .desktop {
         display: none;
 
-        @media only screen and (min-width: 768px) {
+        @include breakpoint(sm) {
           display: inline-block;
         }
       }
@@ -151,7 +152,7 @@
       .mobile {
         display: inline-block;
 
-        @media only screen and (min-width: 768px) {
+        @include breakpoint(sm) {
           display: none;
         }
       }
@@ -159,23 +160,25 @@
 
     &__title {
       padding: 0;
-      margin: 0 0 20px;
-      text-align: left;
+      margin: 0 0 10px;
       color: $black;
-      font-size: 13px;
+      font-size: 18px;
+
+      @include breakpoint(sm) {
+        text-align: left;
+      }
     }
 
     &__content-excerpt,
     &__content-full {
-
       p {
-        font-size: 10px;
-        text-align: left;
         color: $dark-grey;
         margin: 0;
+        font-size: 15px;
 
-        @media only screen and (min-width: 768px) {
+        @include breakpoint(sm) {
           font-size: 13px;
+          text-align: left;
         }
       }
     }
@@ -183,10 +186,11 @@
     &__rows {
       max-width: 700px;
       width: 80%;
-      margin: 60px auto 0;
+      margin: 30px auto 0;
 
-      @media only screen and (min-width: 768px) {
+      @include breakpoint(sm) {
         width: 100%;
+        margin: 30px auto 0;
       }
 
       .slick-slider {
@@ -194,12 +198,12 @@
 
         button.slick-prev {
           position: absolute;
-          left: -35px;
+          left: -30px;
 
           &:before {
             color: $black;
 
-            @media only screen and (min-width: 768px) {
+            @include breakpoint(sm) {
               color: $darker-grey !important;
               content: "Prev Episode" !important;
               font-size: 10px;
@@ -212,14 +216,14 @@
 
           right: -30px;
 
-          @media only screen and (min-width: 768px) {
+          @include breakpoint(sm) {
             right: -25px;
           }
 
           &:before {
             color: $black;
 
-            @media only screen and (min-width: 768px) {
+            @include breakpoint(sm) {
               color: $darker-grey !important;
               content: "Next Episode" !important;
               font-size: 10px;
@@ -231,10 +235,8 @@
     }
 
     &__blocks {
-      width: calc(100% - 20px) !important;
       margin: 0 auto;
       border: 1px solid $grey;
-      display: flex !important;
       flex-direction: row;
       justify-content: flex-end;
       position: relative;
@@ -245,7 +247,7 @@
       box-sizing: border-box;
       cursor: default;
 
-      @media only screen and (min-width: 768px) {
+      @include breakpoint(sm) {
         max-width: 700px;
         width: calc(100% - 40px) !important;
         margin: 0 auto;
@@ -264,11 +266,10 @@
 
       &-image {
         background: no-repeat;
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
         background-size: cover;
         border-radius: 100px;
-        position: absolute;
         left: 0;
         border: 5px solid $pink;
         display: flex;
@@ -276,10 +277,12 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        margin: 0 auto;
 
-        @media only screen and (min-width: 768px) {
+        @include breakpoint(sm) {
           background: no-repeat;
           background-size: cover;
+          position: absolute;
           width: 160px;
           height: 160px;
         }
@@ -287,7 +290,7 @@
         img {
           width: 20px;
 
-          @media only screen and (min-width: 768px) {
+          @include breakpoint(sm) {
             margin: 0 auto;
             height: auto;
           }
@@ -302,12 +305,12 @@
         display: block;
         box-sizing: border-box;
         padding: 5px;
-        width: calc(100% - 70px);
-        text-align: left;
+        text-align: center;
 
-        @media only screen and (min-width: 768px) {
+        @include breakpoint(sm) {
           width: calc(100% - 150px);
           padding: 20px;
+          text-align: left;
         }
 
 
@@ -354,7 +357,7 @@
       justify-content: center;
       z-index: 1000;
 
-      @media only screen and (min-width: 768px) {
+      @include breakpoint(sm) {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -378,7 +381,7 @@
         right: 20px;
         left: 70px;
 
-        @media only screen and (min-width: 768px) {
+        @include breakpoint(sm) {
           max-width: 260px !important;
           width: 100%;
           display: block;
@@ -519,7 +522,7 @@
 .aboutpage {
   padding: 50px 0 0;
 
-  @media only screen and (min-width: 768px) {
+  @include breakpoint(sm) {
     padding: 50px 0 0;
   }
 
@@ -531,7 +534,7 @@
     background-size: cover;
     background-position: center;
 
-    @media only screen and (min-width: 768px) {
+    @include breakpoint(sm) {
       max-height: 800px;
       height: 100vh;
       width: 100vw;
@@ -548,7 +551,7 @@
     color: $white;
     box-sizing: border-box;
 
-    @media only screen and (min-width: 768px) {
+    @include breakpoint(sm) {
       max-height: 800px;
       height: 100vh;
       width: 100%;
@@ -576,7 +579,7 @@
       margin: 0;
       padding: 0;
 
-      @media only screen and (min-width: 768px) {
+      @include breakpoint(sm) {
         width: 70%;
         margin: 0 auto;
       }
@@ -596,7 +599,7 @@
     width: 80%;
     margin: 0 auto;
 
-    @media only screen and (min-width: 768px) {
+    @include breakpoint(sm) {
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -618,7 +621,7 @@
       width: 100%;
       box-sizing: border-box;
 
-      @media only screen and (min-width: 768px) {
+      @include breakpoint(sm) {
         padding: 0 50px 60px;
         display: flex;
         flex-direction: column;

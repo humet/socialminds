@@ -12,10 +12,14 @@
 }
 
 body {
-  padding: 0;
+  padding: 0 0 119px;
   margin: 0;
   font-family: "Gelion Regular", sans-serif;
   font-size: 16px;
+
+  @include breakpoint(sm) {
+    padding: 0; 
+  }
 }
 
 .container {
@@ -27,20 +31,20 @@ body {
 .read-more-toggle,
 .read-less-toggle {
   color: $pink;
-  font-size: 13px;
+  font-size: 15px;
   cursor: pointer;
 }
 
 .desktop {
   display:  none;
-  @media only screen and (min-width: 768px) {
+  @include breakpoint(sm) {
     display: block;
   }
 }
 
 .mobile {
   display:  block;
-  @media only screen and (min-width: 768px) {
+  @include breakpoint(sm) {
     display: none;
   }
 }

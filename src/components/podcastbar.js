@@ -21,7 +21,8 @@ class AudioPlayer extends Component {
       currentTime: "0:00",
       duration: "",
       progressTime: 0,
-      totalEpisodes: this.props.allEpisodes.length
+      totalEpisodes: this.props.allEpisodes.length,
+      playerExpand: false,
     }
   }
 
@@ -88,6 +89,12 @@ class AudioPlayer extends Component {
     }
   }
 
+  togglePlayerExpand = () => {
+    this.setState({
+      playerExpand: !this.state.playerExpand
+    })
+  }
+
   render() {
     const { episode } = this.props
     const prevEp = episode.acf.episode_number - 2
@@ -95,7 +102,8 @@ class AudioPlayer extends Component {
     return (
     <EpisodeConsumer>
     {context=> (
-      <div className="audio-player">
+      <div className={"audio-player" + (this.state.playerExpand ? " expanded" : "")}>
+      <button className="audio-expand" onClick={this.togglePlayerExpand}><span>{this.state.playerExpand ? "-" : "+"}</span></button>
       <div className="audio-player__timer-block">
         <div className="time-start">{this.state.currentTime}</div>
         <div className="time-bar">
@@ -120,16 +128,16 @@ class AudioPlayer extends Component {
           <button className="audio-player-block__controls-fastforward" onClick={() => context.setCurrentPlaying(this.props.allEpisodes[nextEp].node)} disabled={parseInt(episode.acf.episode_number) === this.state.totalEpisodes} />
         </div>
         <div className="audio-player-block__block">
-          <div className="audio-player-block__image">
+          <div className="audio-player-block__content">
+            <div className="audio-player-block__number">
+              <strong>Episode: {episode.acf.episode_number}</strong>
+            </div>
+            <div className="audio-player-block__image">
             <img
               alt={episode.title}
               src={episode.featured_media.localFile.url}
             />
           </div>
-          <div className="audio-player-block__content">
-            <div className="audio-player-block__number">
-              Episode: {episode.acf.episode_number}
-            </div>
             <div className="audio-player-block__title">
               {episode.title}
             </div>
