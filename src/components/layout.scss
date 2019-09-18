@@ -6,6 +6,7 @@
   background-size: contain;
   background-position: bottom center;
   padding-bottom: 117px;
+  min-height: 920px;
 
   @include breakpoint(sm) {
     height: 100vh !important;
@@ -202,13 +203,6 @@
 
           &:before {
             color: $black;
-
-            @include breakpoint(sm) {
-              color: $darker-grey !important;
-              content: "Prev Episode" !important;
-              font-size: 10px;
-              font-family: "Gelion Regular", sans-serif;
-            }
           }
         }
 
@@ -222,14 +216,12 @@
 
           &:before {
             color: $black;
-
-            @include breakpoint(sm) {
-              color: $darker-grey !important;
-              content: "Next Episode" !important;
-              font-size: 10px;
-              font-family: "Gelion Regular", sans-serif;
-            }
           }
+        }
+
+        .slick-prev.slick-disabled:before, 
+        .slick-next.slick-disabled:before {
+          opacity: 0;
         }
       }
     }
