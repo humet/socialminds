@@ -32,6 +32,8 @@
     span {
       position: relative;
       top: -7px;
+      display: block;
+      margin: 0 auto;
     }
 
     @include breakpoint(md) {
