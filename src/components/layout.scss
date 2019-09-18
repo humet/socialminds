@@ -6,7 +6,7 @@
   background-size: contain;
   background-position: bottom center;
   padding-bottom: 117px;
-  min-height: 920px;
+  min-height: 1000px;
 
   @include breakpoint(sm) {
     height: 100vh !important;
@@ -47,7 +47,6 @@
 
   .logo {
     width: 100%;
-    padding: 50px 20px 10px;
     box-sizing: border-box;
     margin: 0;
 
@@ -200,6 +199,7 @@
         button.slick-prev {
           position: absolute;
           left: -30px;
+          top: 80px;
 
           &:before {
             color: $black;
@@ -207,8 +207,9 @@
         }
 
         button.slick-next {
-
+          position: absolute;
           right: -30px;
+          top: 80px;
 
           @include breakpoint(sm) {
             right: -25px;
