@@ -40,7 +40,7 @@ const AboutPage = () => (
           </div>
           <div className="host__name">Theo Watt</div>
           <div className="host__job-title">
-            Senior Copywritter, Social Chain
+            Senior Copywriter, Social Chain
           </div>
           <div className="host__bio">
             Theo’s background in journalism gives him an investigative edge in
@@ -56,8 +56,8 @@ const AboutPage = () => (
           <div className="host__img">
             <img alt="Eve" src={Hosteve} width="150" />
           </div>
-          <div className="host__name">Eve young</div>
-          <div className="host__job-title">Copywritter, Social Chain</div>
+          <div className="host__name">Eve Young</div>
+          <div className="host__job-title">Copywriter, Social Chain</div>
           <div className="host__bio">
             Eve’s years as a social media executive and her personal love of
             social media give her an eye for platform shifts. As a social

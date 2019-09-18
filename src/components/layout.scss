@@ -51,7 +51,7 @@
     margin: 0;
 
     @include breakpoint(sm) {
-      margin: 125px auto 30px;
+      margin: 50px auto 30px;
       display: block;
     }
   }
@@ -551,7 +551,7 @@
       max-height: 800px;
       height: 100vh;
       width: 100%;
-      padding: 200px 0;
+      padding: 0 0 100px;
     }
 
     p {
