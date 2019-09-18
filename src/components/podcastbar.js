@@ -138,9 +138,6 @@ class AudioPlayer extends Component {
         </div>
         <div className="audio-player-block__block">
           <div className="audio-player-block__content">
-            <div className="audio-player-block__number">
-              <strong>Episode: {episode.acf.episode_number}</strong>
-            </div>
             <div className="audio-player-block__image">
             <Img
               alt={episode.title}
@@ -148,7 +145,7 @@ class AudioPlayer extends Component {
             />
           </div>
             <div className="audio-player-block__title">
-              {episode.title}
+            <div className="audio-player-block__number"><strong>Episode: {episode.acf.episode_number}</strong></div> {episode.title}
             </div>
           </div>
         </div>
