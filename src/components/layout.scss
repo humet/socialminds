@@ -5,16 +5,15 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom center;
-    padding-bottom: 120px;
+    padding-bottom: 130px;
   
     @include breakpoint(sm) {
-      min-height: 1000px;
       width: 100vw;
       background-image: url(../images/Background.jpg);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center center;
-      padding-bottom: 0;
+      background-attachment: fixed;
     }
 
   header {
@@ -47,11 +46,12 @@
   .logo {
     width: 100%;
     box-sizing: border-box;
-    margin: 50px auto 30px;
+    margin: 80px auto 30px;
 
     @include breakpoint(sm) {
-      margin: 50px auto 30px;
+      margin: 120px auto 30px;
       display: block;
+      padding: 0 50px;
     }
   }
 
@@ -174,12 +174,7 @@
     &__rows {
       max-width: 700px;
       width: 70%;
-      margin: 30px auto 0;
-
-      @include breakpoint(sm) {
-        width: 100%;
-        margin: 30px auto 0;
-      }
+      margin: 30px auto;
 
       .slick-slider {
         position: relative;
