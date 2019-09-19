@@ -1,21 +1,21 @@
 @import '../styles/main.scss';
 
 .homepage {
-  background-image: url(../images/theo-eve-mobile-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: bottom center;
-  padding-bottom: 117px;
-
-  @include breakpoint(sm) {
-    min-height: 1000px;
-    width: 100vw;
-    background-image: url(../images/Background.jpg);
+    background-image: url(../images/theo-eve-mobile-bg.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    padding-bottom: 0;
-  }
+    background-size: contain;
+    background-position: bottom center;
+    padding-bottom: 120px;
+  
+    @include breakpoint(sm) {
+      min-height: 1000px;
+      width: 100vw;
+      background-image: url(../images/Background.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      padding-bottom: 0;
+    }
 
   header {
     border-bottom: 0px !important;
@@ -47,7 +47,7 @@
   .logo {
     width: 100%;
     box-sizing: border-box;
-    margin: 0;
+    margin: 50px auto 30px;
 
     @include breakpoint(sm) {
       margin: 50px auto 30px;
@@ -79,18 +79,6 @@
 
     a {
       color: $black;
-    }
-  }
-
-  .podcast-img {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 20px 0 60px;
-
-    @include breakpoint(sm) {
-      margin: 60px 0;
-      flex-direction: row;
     }
   }
 

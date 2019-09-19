@@ -4,7 +4,7 @@
   position: fixed;
   width: 100vw;
   left: 0;
-  bottom: -80px;
+  bottom: -120px;
   right: 0;
   transition: 0.5s;
 
@@ -197,7 +197,7 @@
       flex-direction: row;
       justify-content: flex-start;
       margin: 0 auto;
-      padding: 10px 10px 20px;
+      padding: 24px 10px 20px;
       box-sizing: border-box;
 
       @include breakpoint(sm) {
