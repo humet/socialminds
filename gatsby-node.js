@@ -8,8 +8,7 @@
 const path = require(`path`)
 const slash = require(`slash`)
 
-  
-const DEPLOY_ENV = process.env.DEPLOY_ENV || 'lbn_published_production';
+const DEPLOY_ENV = process.env.DEPLOY_ENV || "lbn_published_production"
 
 /**
  * Generate node edges
@@ -17,29 +16,29 @@ const DEPLOY_ENV = process.env.DEPLOY_ENV || 'lbn_published_production';
  * @param {any} { node, actions, getNode }
  */
 exports.onCreateNode = ({ node, actions }) => {
-  const { createNodeField } = actions;
+  const { createNodeField } = actions
 
   /**
    * If these don't exist, the LBN WordPress Plugin isn't installed – so build all posts.
    */
   if (
-    !Object.prototype.hasOwnProperty.call(node, 'meta') ||
-    !Object.prototype.hasOwnProperty.call(node.meta, 'lbn_published_production')
-    ) {
-    createNodeField({ node, name: 'deploy', value: true });
-    return;
+    !Object.prototype.hasOwnProperty.call(node, "meta") ||
+    !Object.prototype.hasOwnProperty.call(node.meta, "lbn_published_production")
+  ) {
+    createNodeField({ node, name: "deploy", value: true })
+    return
   }
 
-  let deploy;
+  let deploy
 
   if (node.meta[DEPLOY_ENV]) {
-    deploy = true;
+    deploy = true
   } else {
-    deploy = false;
+    deploy = false
   }
 
-  createNodeField({ node, name: 'deploy', value: deploy });
-};
+  createNodeField({ node, name: "deploy", value: deploy })
+}
 
 // Implement the Gatsby API “createPages”. This is
 // called after the Gatsby bootstrap is finished so you have
@@ -48,7 +47,6 @@ exports.onCreateNode = ({ node, actions }) => {
 // Will create pages for WordPress pages (route : /{slug})
 // Will create pages for WordPress posts (route : /post/{slug})
 exports.createPages = async ({ graphql }) => {
-
   // The “graphql” function allows us to run arbitrary
   // queries against the local Gatsby GraphQL schema. Think of
   // it like the site has a built-in database constructed

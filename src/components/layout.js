@@ -8,7 +8,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import Audio from "./audio"
 
 import Header from "./header"
 import Footer from "./footer"
@@ -32,15 +31,14 @@ const Layout = ({ children, noLogo, noSocial, className }) => {
       <div>
         <main className="container">{children}</main>
       </div>
-      <Audio/>
-      <Footer/>
-      </div>
+      <Footer />
+    </div>
   )
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  className: PropTypes.string  
+  className: PropTypes.string,
 }
 
 export default Layout

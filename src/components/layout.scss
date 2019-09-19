@@ -1,22 +1,36 @@
 @import '../styles/main.scss';
 
 .homepage {
-  min-height: 100vh;
-  height: auto;
-  width: 100vw;
-  background-image: url(../images/Background.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+    background-image: url(../images/theo-eve-mobile-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom center;
+    padding-bottom: 130px;
+  
+    @include breakpoint(sm) {
+      width: 100vw;
+      background-image: url(../images/Background.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+    }
 
   header {
     border-bottom: 0px !important;
     position: relative;
     background: transparent;
 
-    .nav-logo,
     .social {
       display: none;
+    }
+
+    .nav-logo {
+      display: block;
+
+      @include breakpoint(sm) {
+        display: none;
+      }
     }
   }
 
@@ -30,8 +44,15 @@
   }
 
   .logo {
-    margin: 150px auto 30px;
-    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 80px auto 30px;
+
+    @include breakpoint(sm) {
+      margin: 140px auto 30px;
+      display: block;
+      padding: 0 50px;
+    }
   }
 
   p {
@@ -61,14 +82,7 @@
     }
   }
 
-  .podcast-img {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 60px 0;
-  }
-
-  .footer{
+  .footer {
     display: none;
   }
 
@@ -76,88 +90,226 @@
 
     &__number {
       padding: 0;
-      margin: 0 0 10px;
+      margin: 0 0 5px;
       color: $pink;
       text-align: left;
       display: inline-block;
+      font-size: 15px;
+
+      @include breakpoint(sm) {
+        font-size: 21px;
+        margin: 0 0 10px;
+      }
+
+      .desktop {
+        display: none;
+
+        @include breakpoint(sm) {
+          display: inline-block;
+        }
+      }
+
+      .mobile {
+        display: inline-block;
+
+        @include breakpoint(sm) {
+          display: none;
+        }
+      }
     }
+
     &__feat {
       padding: 0;
-      margin: 0 0 10px 10px;
+      margin: 0 0 5px 5px;
       text-align: left;
       display: inline-block;
       font-size: 10px;
-    }
-    &__title {
-      padding: 0;
-      margin: 0 0 20px;
-      text-align: left;
-      color: $black;
-      font-size: 13px
-    }
 
-    &__rows{
-      max-width: 700px;
-      width: 100%;
-      margin: 60px auto 0;
-
-      .slick-prev:before {
-        color: $darker-grey !important;
-        content: "Next Episode" !important;
-        font-size: 10px;
-        font-family: "Gelion Regular", sans-serif;
-        position: relative;
-        left: -10px;
+      @include breakpoint(sm) {
+        margin: 0 0 10px 10px;
       }
 
-      .slick-next:before {
-        color: $darker-grey !important;
-        content: "Previous Episode"  !important;
-        font-size: 10px;
-        font-family: "Gelion Regular", sans-serif;
+      .desktop {
+        display: none;
+
+        @include breakpoint(sm) {
+          display: inline-block;
+        }
+      }
+
+      .mobile {
+        display: inline-block;
+
+        @include breakpoint(sm) {
+          display: none;
+        }
+      }
+    }
+
+    &__title {
+      padding: 0;
+      margin: 0 0 10px;
+      color: $black;
+      font-size: 18px;
+
+      @include breakpoint(sm) {
+        text-align: left;
+      }
+    }
+
+    &__content-excerpt,
+    &__content-full {
+      p {
+        color: $dark-grey;
+        margin: 0;
+        font-size: 15px;
+
+        @include breakpoint(sm) {
+          font-size: 13px;
+          text-align: left;
+        }
+      }
+    }
+
+    &__rows {
+      max-width: 700px;
+      width: 70%;
+      margin: 30px auto;
+
+      .slick-slider {
+        position: relative;
+
+        button.slick-prev {
+          position: absolute;
+          left: -30px;
+          top: 80px;
+
+          &:before {
+            color: $black;
+          }
+        }
+
+        button.slick-next {
+          position: absolute;
+          right: -30px;
+          top: 80px;
+
+          @include breakpoint(sm) {
+            right: -25px;
+          }
+
+          &:before {
+            color: $black;
+          }
+        }
+
+        .slick-prev.slick-disabled:before, 
+        .slick-next.slick-disabled:before {
+          opacity: 0;
+        }
       }
     }
 
     &__blocks {
-      max-width: 700px;
-      width: calc(100% - 40px) !important;
       margin: 0 auto;
-      border: 1px solid $grey; 
-      display: flex !important;
+      border: 1px solid $grey;
       flex-direction: row;
-      justify-content: flex-start;
+      justify-content: flex-end;
       position: relative;
       height: auto;
-      border-radius: 150px;
+      border-radius: 34px;
       outline: none;
       padding: 0 20px;
-      box-sizing: border-box; 
-      cursor: pointer;
+      box-sizing: border-box;
+      cursor: default;
 
-      &-image{
+      @include breakpoint(sm) {
+        max-width: 700px;
+        width: calc(100% - 40px) !important;
+        margin: 0 auto;
+        border: 1px solid $grey;
+        display: flex !important;
+        flex-direction: row;
+        justify-content: flex-end;
+        position: relative;
+        height: auto;
+        border-radius: 150px;
+        outline: none;
+        padding: 0 20px;
+        box-sizing: border-box;
+        cursor: default;
+      }
+
+      &-image {
         background: no-repeat;
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
         background-size: cover;
         border-radius: 100px;
-        position: relative;
-        left: -20px;
+        left: 0;
         border: 5px solid $pink;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        overflow: hidden;
+        align-items: center;
+        cursor: pointer;
+        margin: 0 auto;
+
+        @include breakpoint(sm) {
+          background: no-repeat;
+          background-size: cover;
+          position: absolute !important;
+          width: 170px;
+          height: 170px;
+        }
 
         img {
-          margin: 0 auto;
+          width: 20px;
+
+          @include breakpoint(sm) {
+            margin: 0 auto;
+            height: auto;
+          }
+        }
+
+        &:focus {
+          outline: none;
         }
       }
 
       &-content {
         display: block;
-        padding: 20px;
         box-sizing: border-box;
-        width: calc(100% - 150px);
-        text-align: left;
+        padding: 5px;
+        text-align: center;
+
+        @include breakpoint(sm) {
+          width: calc(100% - 150px);
+          padding: 20px;
+          text-align: left;
+        }
+
+
+        .hide-description {
+          .episodes__content-excerpt {
+            display: block !important;
+          }
+
+          .episodes__content-full {
+            display: none !important;
+          }
+        }
+
+        .show-description {
+          .episodes__content-excerpt {
+            display: none !important;
+          }
+
+          .episodes__content-full {
+            display: block !important;
+          }
+        }
       }
     }
   }
@@ -165,35 +317,55 @@
 
 .episodespage {
 
-  padding: 80px 0 0;
+  padding: 50px 0 0;
 
   h1 {
     padding: 0;
     text-align: center;
+    margin: 80px 0 40px;
   }
 
   .episodes {
-    
+
     &__rows {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      z-index: 1000;
+
+      @include breakpoint(sm) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
 
     &__blocks {
-      width: 33.33%;
+      max-width: 366.63px;
+      width: 100%;
       display: flex;
       padding: 7px;
       box-sizing: border-box;
 
       &-text {
-        max-width: 260px;
+        max-width: 215px !important;
         width: 100%;
         display: block;
         position: absolute;
         bottom: 20px;
         right: 20px;
+        left: 70px;
+
+        @include breakpoint(sm) {
+          max-width: 260px !important;
+          width: 100%;
+          display: block;
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+        }
       }
 
       &-play {
@@ -202,7 +374,7 @@
         height: 35px;
         border-radius: 25px;
         border: 2px solid $pink !important;
-        display:  flex;
+        display: flex;
         flex-direction: row;
         justify-content: center;
         align-content: center;
@@ -224,22 +396,17 @@
         padding: 20px;
         box-sizing: border-box;
         background-size: cover;
+        background-color: #000;
         position: relative;
 
         &:before {
-          content: '';
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          background-color: rgba($black, 0.5);
+          opacity: 0.5 !important;
           border-radius: 25px;
         }
 
         p,
         h2 {
-          color: $white; 
+          color: $white;
           padding: 0;
           margin: 0
         }
@@ -265,39 +432,103 @@
 
 .contactpage {
 
-  padding: 80px 0 0;
+  padding: 50px 0 0;
 
   h1 {
     padding: 0;
     text-align: center;
+    margin: 80px 0 40px;
+  }
+
+  .gravityform {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    &__field {
+      width: 100%;
+      box-sizing: border-box !important;
+
+      &__hidden {
+        display: none;
+      }
+
+      &__input {
+        border: solid 2px $grey;
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 25px;
+
+        &__textarea {
+          height: 200px;
+        }
+      }
+
+      &__textarea {
+        width: 100%;
+      }
+    }
+
+    &__label {
+      display: none;
+    }
+
+    &__error_message {
+      font-size: 12px;
+      background: red;
+      color: white;
+      display: inline-block;
+      padding: 10px;
+      font-weight: bold;
+    }
   }
 
 }
 
 .aboutpage {
+  padding: 50px 0 0;
 
-  padding: 80px 0 0;
+  @include breakpoint(sm) {
+    padding: 50px 0 0;
+  }
 
   &.about-hero-img {
-    max-height: 800px;
-    height: 100vh;
+    height: 35vh;
     width: 100vw;
     background-image: url(../images/about.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    @include breakpoint(sm) {
+      max-height: 800px;
+      height: 100vh;
+      width: 100vw;
+      background-image: url(../images/about.jpg);
+    }
   }
 
   .hero-text {
-    max-height: 800px;
-    height: 100vh;
-    width: 100%;
+    height: 35vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     color: $white;
-    padding: 200px 0;
     box-sizing: border-box;
+
+    @include breakpoint(sm) {
+      max-height: 800px;
+      height: 100vh;
+      width: 100%;
+      padding: 0 0 100px;
+    }
 
     p {
       width: 80%;
@@ -313,41 +544,83 @@
     padding: 0;
     text-align: center;
     margin: 40px;
+
+    img {
+      width: 100%;
+      display: block;
+      margin: 0;
+      padding: 0;
+
+      @include breakpoint(sm) {
+        width: 70%;
+        margin: 0 auto;
+      }
+    }
   }
 
   h2 {
     padding: 0;
     text-align: center;
-    margin: 40px;
+    margin: 20px;
+
+    @include breakpoint(sm) {
+      margin: 40px;
+    }
   }
 
   .host {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     width: 80%;
     margin: 0 auto;
 
-    &__block {
-      padding: 0 100px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 50%;
-      box-sizing: border-box;
-    }
-
-    &__img {
+    @include breakpoint(sm) {
       display: flex;
       flex-direction: row;
       justify-content: center;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .about-us-text {
+      text-align: center;
+      color: $dark-grey;
+      line-height: 24px;
+    }
+
+    &__block {
+      padding: 0 10px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      box-sizing: border-box;
+
+      @include breakpoint(sm) {
+        padding: 0 50px 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+        box-sizing: border-box;
+      }
+    }
+
+    &__img {
+      flex-direction: row;
+      justify-content: center;
+      margin: 0 auto 10px;
+
+      @include breakpoint(sm) {
       margin: 0 auto 30px;
+      }
     }
 
     &__name {
       text-align: center;
       margin-bottom: 10px;
-      color: $pink; 
+      color: $pink;
     }
 
     &__job-title {
@@ -359,14 +632,26 @@
     &__bio {
       text-align: center;
       color: $dark-grey;
+      line-height: 24px;
     }
   }
 
+  .footer {
+    margin: 0 0 87px;
+
+    @include breakpoint(sm) {
+      margin: 60px 0 0;
+    }
+  }
 }
 
 .privacypage {
 
   padding: 80px 0 0;
+
+  section {
+    padding: 0 15px;
+  }
 
   h1 {
     padding: 0;

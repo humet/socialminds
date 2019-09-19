@@ -2,19 +2,36 @@
 
 .footer {
   margin-top: 60px;
+  @include breakpoint(sm) {
+    padding-bottom: 130px;
+  }
 
   &__top {
+    border-top: 0;
+    
+    @include breakpoint(sm) {
     height: 200px;
     border-top: 1px solid $grey;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    }
   
     .podcast-img {
       display: flex;
       flex-direction: row;
       justify-content: center;
       margin: 20px 0;
+      @include breakpoint(sm) {
+        flex-direction: row;
+      }
+    }
+
+    .footer-logo {
+      display: none;
+      @include breakpoint(sm) {
+        display: flex;
+      }
     }
   }
 
@@ -22,27 +39,77 @@
     background: $dark-grey;
     color: $white;
     font-size: 13px;
-    height: 65px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 40px 20px;
+
+    @include breakpoint(sm) {
+      padding: 0 20px;
+      height: 65px;
+    }
 
     .container {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
+
+      @include breakpoint(sm) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
     }
 
     &-link {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
+      order: 2;
+      @include breakpoint(sm) {
+        flex-direction: column;
+      }
     }
   
     &-logo {
+      margin: 0 auto 20px;
+      order: 1;
+      @include breakpoint(sm) {
+        margin: 0;
+        order: 2;
+      }
       img {
         margin: 0 auto;
         padding: 0;
+      }
+    }
+  }
+
+  &__social {
+    display: block;
+    margin: 0 auto 40px;
+
+    @include breakpoint(sm) {
+      display: none;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  
+    li {
+      display: inline-flex;
+      margin: 0 15px;
+    }
+
+    a {
+      color: $dark-grey;
+      font-size: 24px !important;
+
+      &:hover {
+        color: $pink;
       }
     }
   }
@@ -51,6 +118,7 @@
     color: $white;
     font-size: 13px;
     text-decoration: none;
+    margin: 0 5px;
 
     &:hover {
       color: $pink;
@@ -72,11 +140,20 @@
 
   &__links {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    margin: 0 auto;
+    @include breakpoint(sm) {
+      flex-direction: row;
+      margin: 0;
+    }
 
     a {
-      margin-right: 20px;
+      margin: 0 0 10px;
+      text-align: center;
+      @include breakpoint(sm) {
+        margin-right: 20px;
+      }
     }
   }
 }

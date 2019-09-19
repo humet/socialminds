@@ -1,0 +1,365 @@
+@import "../styles/main.scss";
+
+.audio-player {
+  position: fixed;
+  width: 100vw;
+  left: 0;
+  bottom: -120px;
+  right: 0;
+  transition: 0.5s;
+
+  &.expanded {
+    bottom: 0;
+  }
+
+  @include breakpoint(sm) {
+    bottom: 0;
+  }
+
+  .audio-expand {
+    width: 50px;
+    height: 50px;
+    background: $darker-grey;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border: none;
+    position: absolute;
+    left: calc(50% - 25px);
+    top: -25px;
+    color: white;
+    font-size: 24px;
+
+    span {
+      position: relative;
+      top: -7px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    @include breakpoint(md) {
+      display: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__timer-block {
+    height: 30px;
+    width: 100%;
+    display: block;
+    background-color: $darker-grey;
+    display: flex;
+    flex-direction: row;
+    padding: 5px 10px;
+    box-sizing: border-box;
+
+    @include breakpoint(sm) {
+      padding: 5px 100px;
+    }
+
+    .time-start,
+    .time-end {
+      color: $white;
+      margin: 0 20px;
+    }
+
+    .time-bar {
+      width: 100%;
+      height: 10px;
+      margin: 5px 0;
+      display: block;
+      background: rgba($dark-grey, 0.2);
+      position: relative;
+    }
+
+    .time-bar-progress {
+     background-color: $pink;
+     position: absolute;
+     height: 100%; 
+    }
+  }
+
+  &-block {
+    flex-wrap: wrap;
+    background: $black;
+
+    @include breakpoint(sm) {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+    }
+
+    &__controls {
+      max-width: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin: 0 auto;
+      padding: 20px 10px;
+      box-sizing: border-box;
+      @include breakpoint(sm) {
+        padding: 35px 20px;
+      }
+
+      button {
+        background-color: transparent;
+        border: none;
+      }
+
+      button:focus {
+        outline: none;
+      }
+
+      button:disabled {
+        opacity: 0.2;
+      }
+
+      @include breakpoint(sm) {
+        max-width: 50%;
+      }
+
+      &-rewind {
+        background-image: url(../images/SocialMindsHOME-03.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: block;
+        width: 20%;
+        height: 30px;
+        flex: 1;
+        padding: 0 10px;
+        cursor: pointer;
+      }
+
+      &-back-30 {
+        background-image: url(../images/SocialMindsHOME-04.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: block;
+        width: 20%;
+        height: 30px;
+        flex: 1;
+        cursor: pointer;
+      }
+
+      &-play {
+        background-image: url(../images/SocialMindsHOME-05.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: block;
+        width: 20%;
+        height: 30px;
+        flex: 1;
+        cursor: pointer;
+      }
+
+      &-pause {
+        background-image: url(../images/icon-pause.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: block;
+        width: 20%;
+        height: 30px;
+        flex: 1;
+        cursor: pointer;
+      }
+
+      &-forward-30 {
+        background-image: url(../images/SocialMindsHOME-06.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: block;
+        width: 20%;
+        height: 30px;
+        flex: 1;
+        cursor: pointer;
+      }
+
+      &-fastforward {
+        background-image: url(../images/SocialMindsHOME-07.svg);
+        background-repeat: no-repeat;
+        background-position: center center; 
+        display: block;
+        width: 20%;
+        height: 27px;
+        flex: 1;
+        cursor: pointer;
+      }
+    }
+
+    &__block {
+      max-width: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin: 0 auto;
+      padding: 24px 10px 20px;
+      box-sizing: border-box;
+
+      @include breakpoint(sm) {
+        max-width: 50%;
+      }
+    }
+
+    &__content {
+      display: block;
+      padding: 0 10px;
+    }
+
+    &__image {
+      width: 60px;
+      overflow: hidden;
+      float: left;
+      margin-right: 15px;
+
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50px;
+        display: block;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    &__number {
+      margin-bottom: 10px;
+      text-align: center;
+      color: $pink;
+      display: inline;
+    }
+
+    &__title {
+      color: $white;
+      width: calc(100% - 75px);
+      float: right;
+    }
+  }
+
+  .react-h5-audio-player {
+
+    .toggle-play-wrapper {
+      position: absolute !important;
+      bottom: -50px;
+      left: 100px;
+    }
+
+    .flex {
+      background: $darker-grey !important;
+      padding: 15px 200px !important;
+      height: 20px !important;
+    }
+
+    .progress-bar-wrapper {
+      padding: 0 !important;
+      height: 20px !important;
+
+      .progress-bar {
+        top: 7px !important;
+        position: relative !important;
+      }
+
+      .indicator {
+        width: 5px !important;
+        height: 5px !important;
+        background: $pink !important;
+        box-shadow: none !important;
+        top: 7px !important;
+        border-radius: 0 !important;
+      }
+    }
+
+    .audio-info {
+      color: $white;
+    }
+
+    .time {
+      position: absolute !important;
+      left: -100px !important;
+      top: 0 !important;
+    }
+
+    .volume-controls {
+      position: absolute !important;
+      right: -100px !important;
+      top: 0 !important;
+    }
+  }
+}
+
+/* Make clicks pass-through */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: $pink;
+
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+
+  width: 100%;
+  height: 5px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px $pink, 0 0 5px $pink;
+  opacity: 1.0;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+      -ms-transform: rotate(3deg) translate(0px, -4px);
+          transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  bottom: 15px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+
+  border: solid 2px transparent;
+  border-top-color: $pink;
+  border-left-color: $pink;
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+          animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0%   { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes nprogress-spinner {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
