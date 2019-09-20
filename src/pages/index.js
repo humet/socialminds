@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Slider from "react-slick"
-import BackgroundImage from 'gatsby-background-image'
+import BackgroundImage from "gatsby-background-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -40,130 +40,141 @@ class IndexPage extends Component {
   render() {
     return (
       <EpisodeConsumer>
-        {context=> (
+        {context => (
           <Layout className="homepage">
-        <section className="home">
-          <SEO />
-          <h1>
-            <img alt="logo" className="logo" src={Logo} width="512" />
-          </h1>
-          <p className="subtitle">a podcast by Social Chain</p>
-          <div className="social-links">
-            <Social />
-          </div>
+            <section className="home">
+              <SEO />
+              <h1>
+                <img alt="logo" className="logo" src={Logo} width="512" />
+              </h1>
+              <p className="subtitle">a podcast by Social Chain</p>
+              <div className="social-links">
+                <Social />
+              </div>
 
-          <StaticQuery
-            query={graphql`
-              query HomeQuery {
-                allWordpressPost {
-                  edges {
-                    node {
-                      title
-                      acf {
-                        episode_number
-                        featuring
-                        audio
-                      }
-                      featured_media {
-                        localFile {
-                          url
-                          childImageSharp {
-                            fluid(maxWidth: 600) {
-                              ...GatsbyImageSharpFluid_withWebp
+              <StaticQuery
+                query={graphql`
+                  query HomeQuery {
+                    allWordpressPost {
+                      edges {
+                        node {
+                          title
+                          acf {
+                            episode_number
+                            featuring
+                            audio
+                          }
+                          featured_media {
+                            localFile {
+                              url
+                              childImageSharp {
+                                fluid(maxWidth: 600) {
+                                  ...GatsbyImageSharpFluid_withWebp
+                                }
+                              }
                             }
                           }
+                          status
+                          fields {
+                            deploy
+                          }
+                          excerpt
+                          content
                         }
                       }
-                      status
-                      fields {
-                        deploy
-                      }
-                      excerpt
-                      content
                     }
                   }
-                }
-              }
-            `}
-            render={data => (
-              <div className="episodes__rows">
-                <Slider {...settings}>
-                  {data.allWordpressPost.edges
-                    .filter(episode => episode.node.fields.deploy)
-                    .map(episode => {
-                      return (
-                        <div className="episodes__blocks" key={episode.node.acf.episode_number}>
-                          <BackgroundImage
-                            Tag="div"
-                            className="episodes__blocks-image"
-                            fluid={episode.node.featured_media.localFile.childImageSharp.fluid}
-                            backgroundColor={`#ff0066`}
-                          >
-                            {episode.node.acf.audio &&
-                            <img
-                              alt="Play Podcast"
-                              src={Playbtn}
-                              width="30"
-                              onClick={() => context.setCurrentPlaying(episode.node)}
-                            />
-                            }
-                          </BackgroundImage>
-                          <div className="episodes__blocks-content">
-                            <p className="episodes__number">
-                              Episode: {episode.node.acf.episode_number}
-                            </p>
-                            <p className="episodes__feat">
-                             feat. {episode.node.acf.featuring}
-                            </p>
-                            <h2 className="episodes__title">{episode.node.title}</h2> 
+                `}
+                render={data => (
+                  <div className="episodes__rows">
+                    <Slider {...settings}>
+                      {data.allWordpressPost.edges
+                        .filter(episode => episode.node.fields.deploy)
+                        .map(episode => {
+                          return (
                             <div
-                              className={
-                                this.state.showDescription
-                                  ? "show-description"
-                                  : "hide-description"
-                              }
+                              className="episodes__blocks"
+                              key={episode.node.acf.episode_number}
                             >
-                              <div className="episodes__content-excerpt">
-                                <span
-                                  dangerouslySetInnerHTML={{
-                                    __html: episode.node.excerpt,
-                                  }}
-                                />
+                              <BackgroundImage
+                                Tag="div"
+                                className="episodes__blocks-image"
+                                fluid={
+                                  episode.node.featured_media.localFile
+                                    .childImageSharp.fluid
+                                }
+                                backgroundColor={`#ff0066`}
+                              >
+                                {episode.node.acf.audio && (
+                                  <img
+                                    alt="Play Podcast"
+                                    src={Playbtn}
+                                    width="30"
+                                    style={{width: 34}}
+                                    onClick={() =>
+                                      context.setCurrentPlaying(episode.node)
+                                    }
+                                  />
+                                )}
+                              </BackgroundImage>
+                              <div className="episodes__blocks-content">
+                                <p className="episodes__number">
+                                  Episode: {episode.node.acf.episode_number}
+                                </p>
+                                <p className="episodes__feat">
+                                  feat. {episode.node.acf.featuring}
+                                </p>
+                                <h2 className="episodes__title">
+                                  {episode.node.title}
+                                </h2>
                                 <div
-                                  className="read-more-toggle"
-                                  onClick={this.handleClick}
+                                  className={
+                                    this.state.showDescription
+                                      ? "show-description"
+                                      : "hide-description"
+                                  }
                                 >
-                                  read more
-                                </div>
-                              </div>
-                              <div className="episodes__content-full">
-                                <span
-                                  dangerouslySetInnerHTML={{
-                                    __html: episode.node.content,
-                                  }}
-                                />
-                                <div
-                                  className="read-less-toggle"
-                                  onClick={this.handleClick}
-                                >
-                                  read less
+                                  <div className="episodes__content-excerpt">
+                                    <span
+                                      dangerouslySetInnerHTML={{
+                                        __html: episode.node.excerpt,
+                                      }}
+                                    />
+                                    <div
+                                      className="read-more-toggle"
+                                      onClick={this.handleClick}
+                                    >
+                                      read more
+                                    </div>
+                                  </div>
+                                  <div className="episodes__content-full">
+                                    <span
+                                      dangerouslySetInnerHTML={{
+                                        __html: episode.node.content,
+                                      }}
+                                    />
+                                    <div
+                                      className="read-less-toggle"
+                                      onClick={this.handleClick}
+                                    >
+                                      read less
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                      )
-                    })}
-                </Slider>
-              </div>
-            )}
-          />
+                          )
+                        })}
+                    </Slider>
+                  </div>
+                )}
+              />
 
-          <div className="podcast-img">
-            <Podcast />
-          </div>
-        </section>
-      </Layout>
+              <div className="podcast-img">
+                <Podcast />
+              </div>
+            </section>
+          </Layout>
         )}
       </EpisodeConsumer>
     )

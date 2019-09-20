@@ -34,7 +34,6 @@ exports.handler = async (event, context, callback) => {
     }
   }
 
-
   // Parse that post data body
   const data = JSON.parse(event.body)
 

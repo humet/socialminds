@@ -26,11 +26,7 @@
     }
 
     .nav-logo {
-      display: block;
-
-      @include breakpoint(sm) {
-        display: none;
-      }
+      display: none;
     }
   }
 
@@ -41,12 +37,17 @@
 
   .subtitle {
     font-family: "Gelion Regular", sans-serif;
+    margin-top: 0;
+
+    @include breakpoint(md) {
+      margin-top: 21px;
+    }
   }
 
   .logo {
     width: 100%;
     box-sizing: border-box;
-    margin: 80px auto 30px;
+    margin: 80px auto 0;
 
     @include breakpoint(sm) {
       margin: 140px auto 30px;
@@ -570,6 +571,7 @@
 
   .host {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     width: 80%;
@@ -615,6 +617,11 @@
       @include breakpoint(sm) {
       margin: 0 auto 30px;
       }
+
+      img {
+        border: $pink solid 4px;
+        border-radius: 150px;
+      }
     }
 
     &__name {
@@ -627,6 +634,10 @@
       text-align: center;
       margin-bottom: 20px;
       color: $blue;
+
+      a {
+        color: $blue;
+      }
     }
 
     &__bio {

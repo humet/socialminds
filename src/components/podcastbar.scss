@@ -4,9 +4,12 @@
   position: fixed;
   width: 100vw;
   left: 0;
-  bottom: -120px;
+  bottom: -100px;
   right: 0;
   transition: 0.5s;
+  height: 200px;
+  background: #000;
+  padding-bottom: 15px;
 
   &.expanded {
     bottom: 0;
@@ -14,6 +17,7 @@
 
   @include breakpoint(sm) {
     bottom: 0;
+    height: 130px;
   }
 
   .audio-expand {
@@ -28,12 +32,14 @@
     top: -25px;
     color: white;
     font-size: 24px;
+    padding: 0;
 
     span {
       position: relative;
       top: -7px;
       display: block;
       margin: 0 auto;
+      text-align: center;
     }
 
     @include breakpoint(md) {

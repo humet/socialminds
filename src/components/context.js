@@ -4,11 +4,11 @@ import { graphql, useStaticQuery } from "gatsby"
 // this is the equivalent to the createStore method of Redux
 // https://redux.js.org/api/createstore
 
-const EpisodeContext = React.createContext();
+const EpisodeContext = React.createContext()
 
 export function EpisodeProvider(props) {
   const data = useStaticQuery(graphql`
-  {
+    {
       allWordpressPost {
         edges {
           node {
@@ -35,8 +35,8 @@ export function EpisodeProvider(props) {
           }
         }
       }
-  }
-`)
+    }
+  `)
   const [currentPlaying, setCurrentPlaying] = React.useState(
     data.allWordpressPost.edges[0].node
   )

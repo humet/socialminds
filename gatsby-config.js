@@ -3,8 +3,8 @@ require("dotenv").config({
 })
 
 const gravityforms = {
-  "key": process.env.GATSBY_GRAVITY_FORMS_KEY,
-  "secret": process.env.GATSBY_GRAVITY_FORMS_SECRET,
+  key: process.env.GATSBY_GRAVITY_FORMS_KEY,
+  secret: process.env.GATSBY_GRAVITY_FORMS_SECRET,
 }
 
 module.exports = {
@@ -64,18 +64,34 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     {
-    resolve: "gatsby-plugin-google-tagmanager",
-    options: {
-      id: "GTM-WWXQLR9",
-      includeInDevelopment: false,
-      },
-    },  
-    {
-      resolve: 'gatsby-plugin-iubenda-cookie-footer',
+      resolve: "gatsby-plugin-google-tagmanager",
       options: {
-      iubendaOptions: {"lang":"en","siteId":1676133,"cookiePolicyId":76482076, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"position":"float-center","acceptButtonColor":"#0073CE","acceptButtonCaptionColor":"white","customizeButtonColor":"#DADADA","customizeButtonCaptionColor":"#4D4D4D","textColor":"black","backgroundColor":"white","backgroundOverlay":true }},
-      // optional, if present, a Google Tag Manager event ("iubenda_consent_given") is triggered
+        id: "GTM-WWXQLR9",
+        includeInDevelopment: false,
       },
-    }
+    },
+    {
+      resolve: "gatsby-plugin-iubenda-cookie-footer",
+      options: {
+        iubendaOptions: {
+          lang: "en",
+          siteId: 1676133,
+          cookiePolicyId: 76482076,
+          banner: {
+            acceptButtonDisplay: true,
+            customizeButtonDisplay: true,
+            position: "float-center",
+            acceptButtonColor: "#0073CE",
+            acceptButtonCaptionColor: "white",
+            customizeButtonColor: "#DADADA",
+            customizeButtonCaptionColor: "#4D4D4D",
+            textColor: "black",
+            backgroundColor: "white",
+            backgroundOverlay: true,
+          },
+        },
+        // optional, if present, a Google Tag Manager event ("iubenda_consent_given") is triggered
+      },
+    },
   ],
 }

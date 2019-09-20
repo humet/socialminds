@@ -33,7 +33,7 @@ const Social = () => (
       </li>
       <li>
         <a
-          href="https://www.instagram.com/socialchainagency/?hl=en"
+          href="https://www.instagram.com/socialchain/?hl=en"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visit Social Chain Instagram"

@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import LogoWhite from "../images/Social_minds_logo_White.svg"
 import HostTheo from "../images/Theo_SM.svg"
 import Hosteve from "../images/Eve_SM.svg"
+import HostOllie from "../images/team-ollie.jpg"
 
 const AboutPage = () => (
   <Layout className="aboutpage about-hero-img">
@@ -39,15 +40,13 @@ const AboutPage = () => (
             <img alt="Theo" src={HostTheo} width="150" />
           </div>
           <div className="host__name">Theo Watt</div>
-          <div className="host__job-title">
-            Senior Copywriter, Social Chain
-          </div>
+          <div className="host__job-title"><a href="https://www.linkedin.com/in/theo-watt-41293047/" rel="noopener noreferrer" target="_blank">Senior Copywriter, Social Chain</a></div>
           <div className="host__bio">
-            Theo’s background in journalism gives him an investigative edge in
-            social; his analytical view of the landscape means he can
-            contextualise trending topics. His lifelong passion for advertising
-            means he has a deep understanding of brand activity, both past and
-            present. Having worked for brands such as Viacom and MTV UK and now
+            Theo’s background in journalism and analytical view of the landscape
+            means he can contextualise trending topics with an investigative
+            edge. With a lifelong passion for advertising, he has a deep
+            understanding of brand activity, both past and present. Having
+            worked for international broadcasters Viacom and MTV UK and now
             writing for accounts such as Superdry and Nokia, he is skilled in
             knowing what sells on social.
           </div>
@@ -57,7 +56,26 @@ const AboutPage = () => (
             <img alt="Eve" src={Hosteve} width="150" />
           </div>
           <div className="host__name">Eve Young</div>
-          <div className="host__job-title">Copywriter, Social Chain</div>
+          <div className="host__job-title"><a href="https://www.linkedin.com/in/eve-young/" rel="noopener noreferrer" target="_blank">Copywriter, Social Chain</a></div>
+          <div className="host__bio">
+            Eve’s years as a social media executive and her personal love of
+            social media give her an eye for platform shifts. As a social
+            native, she is embedded in internet culture and can relay the
+            nuances of ‘internet speak’ for brands while busting popular myths
+            of youth marketing. A previous contributor at Voxburner and speaker
+            for The Juice Academy and Chicks In Advertising, Eve has a knack for
+            anticipating social updates and trends before they happen.
+          </div>
+        </div>
+      </div>
+      <div className="host">
+      <h2 style={{width: `100%`, margin: `15px 0 35px`}}>Produced by...</h2>
+        <div className="host__block">
+          <div className="host__img">
+            <img alt="Ollie Thomson" src={HostOllie} width="150" />
+          </div>
+          <div className="host__name">Ollie Thomson</div>
+          <div className="host__job-title"><a href="https://www.linkedin.com/in/ollie-thomson-99b300a8/" rel="noopener noreferrer" target="_blank">Copywriter, Social Chain</a></div>
           <div className="host__bio">
             Eve’s years as a social media executive and her personal love of
             social media give her an eye for platform shifts. As a social

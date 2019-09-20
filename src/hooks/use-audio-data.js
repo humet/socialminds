@@ -4,7 +4,7 @@ export const AudioData = () => {
   const { allWordpressPost } = useStaticQuery(
     graphql`
       query AudioQuery {
-        allWordpressPost(sort: {order: ASC, fields: date}) {
+        allWordpressPost(sort: { order: ASC, fields: date }) {
           edges {
             node {
               title
