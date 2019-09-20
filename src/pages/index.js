@@ -110,7 +110,7 @@ class IndexPage extends Component {
                                     alt="Play Podcast"
                                     src={Playbtn}
                                     width="30"
-                                    style={{width: 34}}
+                                    style={{ width: 34 }}
                                     onClick={() =>
                                       context.setCurrentPlaying(episode.node)
                                     }

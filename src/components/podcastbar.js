@@ -29,9 +29,7 @@ class AudioPlayer extends Component {
     }
   }
 
-  componentDidMount() {
-    
-  }
+  componentDidMount() {}
 
   componentWillUnmount() {
     this.player.current.removeEventListener("timeupdate", () => {})
@@ -39,7 +37,10 @@ class AudioPlayer extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { episode } = this.props
-    if (episode.acf.episode_number !== prevProps.episode.acf.episode_number || this.state.firstPlay) {
+    if (
+      episode.acf.episode_number !== prevProps.episode.acf.episode_number ||
+      this.state.firstPlay
+    ) {
       this.player.current.removeEventListener("timeupdate", () => {})
       this.player.current.removeEventListener("loadstart", () => {})
       this.player.current.removeEventListener("canplaythrough", () => {})
