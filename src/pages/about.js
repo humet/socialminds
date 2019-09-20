@@ -3,8 +3,8 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import LogoWhite from "../images/Social_minds_logo_White.svg"
-import HostTheo from "../images/Theo_SM.svg"
-import Hosteve from "../images/Eve_SM.svg"
+import HostTheo from "../images/team-theo.jpg"
+import Hosteve from "../images/team-eve.jpg"
 import HostOllie from "../images/team-ollie.jpg"
 
 const AboutPage = () => (
