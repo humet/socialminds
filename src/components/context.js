@@ -41,11 +41,15 @@ export function EpisodeProvider(props) {
     data.allWordpressPost.edges[0].node
   )
 
+  const [startPlay, setStartPlay] = React.useState(false)
+
   return (
     <EpisodeContext.Provider
       value={{
         state: currentPlaying,
         setCurrentPlaying,
+        startPlay,
+        setStartPlay,
       }}
       {...props}
     />

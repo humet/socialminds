@@ -25,21 +25,19 @@ class AudioPlayer extends Component {
       progressTime: 0,
       totalEpisodes: this.props.allEpisodes.length,
       playerExpand: false,
-      firstPlay: true,
     }
   }
-
-  componentDidMount() {}
 
   componentWillUnmount() {
     this.player.current.removeEventListener("timeupdate", () => {})
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { episode } = this.props
+    const { episode, startPlay, setStartPlay } = this.props
+
     if (
       episode.acf.episode_number !== prevProps.episode.acf.episode_number ||
-      this.state.firstPlay
+      startPlay
     ) {
       this.player.current.removeEventListener("timeupdate", () => {})
       this.player.current.removeEventListener("loadstart", () => {})
@@ -47,8 +45,8 @@ class AudioPlayer extends Component {
       this.player.current.play()
       this.setState({
         player: "playing",
-        firstPlay: false,
       })
+      setStartPlay(false)
       this.player.current.addEventListener("timeupdate", e => {
         this.setState({
           currentTime: this.getTime(e.target.currentTime),
@@ -89,6 +87,19 @@ class AudioPlayer extends Component {
 
   togglePlay = () => {
     if (this.state.player === "paused") {
+      this.player.current.addEventListener("timeupdate", e => {
+        this.setState({
+          currentTime: this.getTime(e.target.currentTime),
+          duration: this.getTime(e.target.duration),
+          progressTime: (e.target.currentTime / e.target.duration) * 100,
+        })
+      })
+      this.player.current.addEventListener("loadstart", e => {
+        NProgress.start()
+      })
+      this.player.current.addEventListener("canplaythrough", e => {
+        NProgress.done()
+      })
       this.player.current.play()
       this.setState({
         player: "playing",
@@ -219,7 +230,12 @@ export const PodcastBar = () => {
   return (
     <EpisodeConsumer>
       {context => (
-        <AudioPlayer episode={context.state} allEpisodes={allEpisodes.edges} />
+        <AudioPlayer
+          startPlay={context.startPlay}
+          setStartPlay={context.setStartPlay}
+          episode={context.state}
+          allEpisodes={allEpisodes.edges}
+        />
       )}
     </EpisodeConsumer>
   )

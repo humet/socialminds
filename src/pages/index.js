@@ -37,6 +37,14 @@ class IndexPage extends Component {
     })
   }
 
+  handlePlay(episode, context) {
+    if (episode.node.acf.episode_number === context.state.acf.episode_number) {
+      context.setStartPlay(true)
+    } else {
+      context.setCurrentPlaying(episode.node)
+    }
+  }
+
   render() {
     return (
       <EpisodeConsumer>
@@ -112,7 +120,7 @@ class IndexPage extends Component {
                                     width="30"
                                     style={{ width: 34 }}
                                     onClick={() =>
-                                      context.setCurrentPlaying(episode.node)
+                                      this.handlePlay(episode, context)
                                     }
                                   />
                                 )}

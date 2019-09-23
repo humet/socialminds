@@ -8,6 +8,14 @@ import SEO from "../components/seo"
 
 import Play from "../images/play.png"
 
+function handlePlay(episode, context) {
+  if (episode.node.acf.episode_number === context.state.acf.episode_number) {
+    context.setStartPlay(true)
+  } else {
+    context.setCurrentPlaying(episode.node)
+  }
+}
+
 const EpisodesPage = () => (
   <EpisodeConsumer>
     {context => (
@@ -53,7 +61,10 @@ const EpisodesPage = () => (
                   .filter(episode => episode.node.fields.deploy)
                   .map(episode => {
                     return (
-                      <div className="episodes__blocks">
+                      <div
+                        className="episodes__blocks"
+                        key={episode.node.acf.episode_number}
+                      >
                         <BackgroundImage
                           Tag="div"
                           className="episodes__blocks-content"
@@ -67,9 +78,7 @@ const EpisodesPage = () => (
                             <button
                               name="Play"
                               className="episodes__blocks-play"
-                              onClick={() =>
-                                context.setCurrentPlaying(episode.node)
-                              }
+                              onClick={() => handlePlay(episode, context)}
                             >
                               <img
                                 alt="Play Podcast"
