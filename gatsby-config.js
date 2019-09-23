@@ -15,7 +15,7 @@ module.exports = {
     description:
       "Social Minds is the UK’s first-ever dedicated social media marketing podcast, brought to you by Social Chain.",
     url: process.env.URL, // No trailing slash allowed!
-    image: "/static/images/socialimage.jpg", // Path to your image you placed in the 'static' folder
+    image: "/images/socialimage.jpg", // Path to your image you placed in the 'static' folder
     twitterUsername: "@thesocialchain",
   },
   plugins: [
