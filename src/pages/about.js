@@ -97,7 +97,7 @@ const AboutPage = () => (
               rel="noopener noreferrer"
               target="_blank"
             >
-              Copywriter, Social Chain
+              Senior Video Producer, Social Chain
             </a>
           </div>
           <div className="host__bio">
