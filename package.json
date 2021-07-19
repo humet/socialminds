@@ -23,7 +23,7 @@
     "gatsby-plugin-sitemap": "^2.2.13",
     "gatsby-source-filesystem": "^2.1.20",
     "gatsby-source-gravityforms": "^1.0.15",
-    "gatsby-source-wordpress": "^3.1.30",
+    "gatsby-source-wordpress": "^4.0.8",
     "gatsby-transformer-sharp": "^2.2.13",
     "netlify-lambda": "^1.6.3",
     "node-sass": "^4.12.0",
